@@ -1,0 +1,34 @@
+\begin{frame}
+%\subsection{Intersection Automaton construction}
+\frametitle{Intersection automata construction}
+
+\tiny{\textcolor{blue}{Given a collection of control loops, each expressed as B\"{u}chi automatons, we describe below 
+the methodology for computing their product~\footnote{\tiny {\textcolor{blue}{Yih-Kuen Tsay,B\"{u}chi Automata and Model Checking}}}%DBLP:books/ws/automata2012/ChevalierDMP12},
+which is an important step in our work. For the sake of simplicity and ease of illustration, 
+we explain the product construction in terms of two automatons.}}
+
+\tiny{\textcolor{blue}{\bf Intersection of B\"{u}chi automata}}
+\begin{itemize}
+ \item \tiny{\textcolor{blue}{Let $B_1 = (\Sigma,Q_1,\Delta_1,{Q_1}^0,F_1)$ and $B_2 = (\Sigma.Q_2,\Delta_2,{Q_2}^0,F_2)$}}
+ \item \tiny{\textcolor{blue}{We can build an automaton for $L(B_1)\cap L(B_2)$ as follows}}
+ \item \tiny{\textcolor{blue}{$B_1 \cap B_2 = (\Sigma, Q_1 \times Q_2 \times {0,1,2},\Delta, Q^0_1 \times Q^0_2 \times
+       {0}, Q_1 \times Q_2 \times {2})$}}
+ \item \tiny{\textcolor{blue}{We have $(\langle r,q,x \rangle,a,\langle r^{'},q^{'},y \rangle) \epsilon \Delta$ iff the 
+       following conditions hold:}}
+        \begin{itemize}
+          \item \tiny{\textcolor{blue}{$(r,a,r^{'}) \epsilon \Delta_1$ and $ (q,a,q^{'}) \epsilon \Delta_2$}}
+          \item \tiny{\textcolor{blue}{The third component is affected by the accepting conditions of $B_1$ and $B_2$.}}
+            \begin{itemize}
+             \item \tiny{\textcolor{blue}{If $x = 0$ and $r^{'} \epsilon F_1$ then $y = 1$.}}
+             \item \tiny{\textcolor{blue}{If $x = 1$ and $q^{'} \epsilon F_2$ then $y = 2$.}}
+             \item \tiny{\textcolor{blue}{If $x = 2$ then $y = 0$.}}
+             \item \tiny{\textcolor{blue}{Otherwise, $y = x$}}
+            \end{itemize}
+
+        \end{itemize}
+ \item \tiny{\textcolor{blue}{The third component is responsible for guaranteeing that accepting states from both $B_1$ and
+       $B_2$ appear infinitely often.}}
+\end{itemize}
+
+
+\end{frame}

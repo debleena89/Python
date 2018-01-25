@@ -1,0 +1,12 @@
+\section{Related work}
+\noindent
+The idea of automata based control scheduling has been discussed in \cite{WeissA07}. They express
+the communication interface among the control components using a formal language. This work illustrates how the interfaces of discrete-time switched linear systems
+can be expressed using a B\"{u}chi automaton. \cite{AlurW08}  describe CPU scheduling
+in terms of finite machines over infinite words. The infinite words depict the particular time 
+slot for which a particular resource can be allotted to a specific control component. The work in \cite{WeissFAA09} applies automata based scheduling on networks, to formalize the effect of bus scheduling and network stability. Further, \cite{GhoshMDHD16} describes how the interfacing among 
+the control actions can be modeled by B\"{u}chi automaton to guarantee stable and reliable
+scheduling. This work presents a methodology for construction of a scheduler automata 
+where each state represents one particular control schedule while generating the permissible 
+schedule in terms of a $\omega$-regular language. Our work is an application framework based on the contributions above, with specific focus to code replacement attack and schedulability analysis. While one of the major control objectives discussed in the above contributions has been exponential stability, which we assume to be satisfied for individual control components, we propose to use a fairness schedule in our work, that requires a different modeling strategy, as explained in the following. Moreover, our work here can be considered as a complete end-to-end framework that is built over and above the contributions in literature on automata-based control performance modeling and assessment.
+

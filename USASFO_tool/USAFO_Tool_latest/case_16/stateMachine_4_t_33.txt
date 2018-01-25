@@ -1,0 +1,15 @@
+number_of_state:2
+
+States:tuf0,tuf1
+
+Initial State:tuf0
+
+number_of_final_states:1
+
+Final_states:tuf1
+
+number_of_alphabets:2
+
+alphabets:a,b
+
+Transitions:(tuf0,a,tuf0),(tuf0,b,tuf1),(tuf1,a,tuf0),(tuf1,b,tuf1) 

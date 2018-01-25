@@ -1,0 +1,35 @@
+\begin{frame}
+\begin{tcolorbox}[
+colframe=blue!25,
+colback=blue!10,
+coltitle=blue!20!black,  
+title= \scriptsize{\textcolor{red}{Schedulability violation attack detection}}]
+\begin{itemize}
+\item \tiny{\textcolor{blue}{ As the system is monitored over time, newer structures of the control loops
+emerge and we perform the same computation steps outlined above on the
+modified structures to check if it remains schedulable even in the presence of the
+modifications.}}
+
+\item \tiny{\textcolor{blue}{Our mechanism can thus be used as a continuous monitor to
+safe-guard against intermittent control attacks.}}
+
+\item \tiny{\textcolor{blue}{Our framework can point out replacement
+attacks only if schedulability is lost.}}
+
+\item \tiny{\textcolor{blue}{Once the intersection is computed,we may have 3 different possibilities if
+schedulability is lost.Assuming that the system was schedulable earlier, we may conclude the system has 
+been attacked if any of the following possibilities are detected.}}
+
+  \begin{itemize}
+   \item \tiny{\textcolor{blue}{We may have an empty intersection automaton now}}
+   \item \tiny{\textcolor{blue}{The product may still be non-empty but a cycle may not be reachable}}
+   \item \tiny{\textcolor{blue}{A cycle may be found but it may not contain representative tasks from each control loop}}
+
+  \end{itemize}
+
+\item \tiny{\textcolor{blue}{If the system still remains schedulable according to our scheduling objective, our framework is unable to
+                            flag the attack, even if a replacement has been carried out.}}
+\end{itemize}
+\end{tcolorbox}
+\end{frame}
+

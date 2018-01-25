@@ -1,0 +1,114 @@
+\section{Background} \label{sec2}
+\noindent
+In this section, we present two background concepts that are necessary to establish the foundation of this work. We begin with the  
+B\"{u}chi automaton. \\
+
+\noindent
+\textbf{B\"{u}chi Automaton:}
+A B\"{u}chi automaton~\cite{leeuwen90/Thomas90} is described as a five tuple, 
+$A = (Q,I,\delta,q_0,F)$, where $Q$ is a finite set of states, $I$ is the input alphabet, $\delta : Q$ x $I \rightarrow Q $ is the transition function, $q_0$ 
+is an initial state ($q_0 \in Q$) and $F$ is a set of final states. An infinite word $\delta \in I ^ \omega$ over the input alphabet takes the automaton through an infinite sequence of states $ q_0, q_1, q_2, ....$, which describes a run of
+the automaton such that $ q_{k+1} \in \delta(q_k, \delta_k)$ where $k \in \mathbb{N}$ and $\delta_k$ refers to the $k^{th}$ symbol on the input 
+word $\delta$. An infinite word is accepted if some 
+accepting state $q_f \in F $ appears in the run $ q_0, q_1, q_2, ....$ 
+infinitely often. If 
+$|\delta(q,i)| = 1$ where $ q \in Q $ and $i \in I$, then it is a deterministic 
+B\"{u}chi automaton, otherwise it is non-deterministic. \\
+
+\noindent
+\textbf{Intersection of B\"{u}chi Automaton:}
+Intersection on B\"{u}chi Automaton is a closure operation. If the given automata 
+are B\"{u}chi automaton then after intersection the resulting automaton should also be 
+B\"{u}chi automaton. Generally we perform cross product on the given input automata
+to get the resulting intersection automata. But in case of B\"{u}chi Automaton, only cross product 
+is not sufficient to conserve the feature in resulting automata.
+\begin{figure}
+\begin{center}
+\includegraphics[width=50mm]{example_1.pdf}
+\end{center}
+%\vspace{-0.1in}
+\caption{{\em Flow chart of our idea}}
+\label{fig:Algorithm}
+\end{figure}
+
+Let us consider two automata P and Q depicted in Fig.\ref{fig:Algorithm} can be defined by the
+conventional five tuple:
+
+$P = \{(p_0,p_1),(a,b),p_0, Q \times \sum \rightarrow Q,p_1\}$
+
+$Q = \{(q_0,q_1),(a,b),q_0, Q \times \sum \rightarrow Q,q_1\}$
+
+We need to go through the 
+following steps for intersecting B\"{u}chi automaton:
+\begin{enumerate}
+ \item First cross product is performed on the given input automata.
+ 
+ \item Consider the resulting product automata, starting from the start state. only
+ reachable states are considered as shown in Fig.\ref{product}
+ 
+ \begin{figure}
+\begin{center}
+\includegraphics[width=50mm]{product.pdf}
+\end{center}
+%\vspace{-0.1in}
+\caption{{\em cross Product of the input automata}}
+\label{product}
+\end{figure}
+
+ 
+ \item We can see that the states does not contain the tuple $<p_2,q_0>$ which signifies 
+ that it is an empty automata. But intersection of two B\"{u}chi Automaton cannot be an empty automaton. In
+ the following steps we modify the product construction to get a track containing accepting states from
+ both the automata. The resulting intersection automata ensures that both automata visits accepting states 
+ infinitely often.
+ 
+ \item After getting the resulting set, where each state is reachable from the 
+ start state, the copy of $n + 1$ number of such states are made, where $n$ is the number
+ of control loops. In this example we have two automata. So, three copies of the product automata will be made,
+ each of the copy will have a flag with the states as shown in Fig.\ref{fig:copy}. The flags acssociated with 
+ the states are waiting to see the acceptance of the automaton.
+ 
+  \begin{figure}
+\begin{center}
+\includegraphics[width=50mm]{state_copy.pdf}
+\end{center}
+%\vspace{-0.1in}
+\caption{{\em cross Product of the input automata}}
+\label{fig:copy}
+\end{figure}
+
+In the Fig. \ref{fig:copy} flag $1$ is waiting to see the acceptance state of P, flage $2$ is waiting to see
+the acceptance state of Q, and states of flag $3$ signifies that the track has traversed all the accepting states
+of all the automaton.
+
+ 
+ \item starting from the first copy, the transitions are made according to the product automaton.
+ A transition goes to the next flag if it gets final state of one control loop. Say there
+ are $n$ number of control loops and $n$ number of product automata. Each control loop will
+ correspond to a particular copy. If acceptance condition of that loop is obtained then the 
+ transition goes to the next copy, otherwise it remains to the transition of its own copy as shown in the fig.\ref{transition}
+ 
+ \item In this way , when it reaches the last copy, it has traversed the accepting state of
+ each controlloop. After reaching to the last state it goes to the first state.
+ 
+ \item In the resulting automaton a cycle is accepted, when it passes through the $(n + 1)$th copy
+ of the product automaton, that signifies the run of the cycle traversed the accepting state of each 
+ control loop.
+ 
+ \begin{figure}
+\begin{center}
+\includegraphics[width=50mm]{state_copy_transition.pdf}
+\end{center}
+%\vspace{-0.1in}
+\caption{{\em cross Product of the input automata}}
+\label{transition}
+\end{figure}
+
+
+\item Other cycles, which do not passes through the $(n + 1)$th copy, are not accepted.
+\end{enumerate}
+
+
+
+
+

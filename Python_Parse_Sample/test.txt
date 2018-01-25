@@ -1,0 +1,4 @@
+Value of count: 0 
+ TIME before read: 19:09:54
+buffer: 
+ TIME after read 19:09:54

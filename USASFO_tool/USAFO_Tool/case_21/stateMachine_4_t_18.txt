@@ -1,0 +1,15 @@
+number_of_state:2
+
+States:tud0,tud1
+
+Initial State:tud0
+
+number_of_final_states:1
+
+Final_states:tud1
+
+number_of_alphabets:2
+
+alphabets:a,b
+
+Transitions:(tud0,a,tud0),(tud0,b,tud1),(tud1,a,tud1),(tud1,b,tud0) 

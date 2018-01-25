@@ -1,0 +1,72 @@
+\section{Illustrative examples} \label{sec4}
+\noindent
+We now illustrate our methodology with the following system of three control actions
+$\sigma = \{A_1, A_2, A_3\}$ where,
+
+   $A_0 = ([2.0, -1.75],[2.0, -2.0])$
+   
+   $A_1 = ([0.25, 1.75],[0.25, -0.25])$
+
+   $A_2 = ([0.35, 1.85],[0.35, -0.35])$
+   
+According the steps given in the solution architecture section we  \textcolor{red}{constructed}
+the automaton. 
+Here we have $3$ control actions and if we choose the length of the control schedule 
+to be of length $4$ then we have $3^4 = 81$ sequences. To generate the possible control
+scheduling sequences the tree structure is constructed as shown below. 
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=55mm, height=115mm]{tree_space_new.pdf}
+\end{center}
+%\vspace{-0.1in}
+\caption{{\em Generation of all possible control schedules}}
+\label{fig:control schedule}
+\end{figure}
+
+In the diagram, the leaf nodes are the exponentially stable states. Here we have 
+considered that 
+
+$ExpStab(4,0.5) = \{\delta \in I^\omega : \forall t \in \mathbb{N} \parallel A_1\dots A_4 \parallel  < 0.5\}$
+
+After generating all possible control scheduling sequences, exponential stability
+calculated on each of them, which states satisfy our considered exponential stability
+requirement, they are considered as accepted states for the automaton which we will
+construct in the next step. The $18$ leaf nodes of the tree are depicting the Exponentially 
+stable states. 
+
+In the next step. with the above mentioned $18$ stable states we will be constructing
+the Finite State Machine according the steps given earlier. For each of these $18$
+states, all possible transitions (i.e., ${A_0, A_1, A_2}$) are added and the newly formed 
+states are matched with all of the $18$ states. If any matches found, those transitions
+are added for the Finite State Machine. Thus the resulting automaton is formed which is depicted
+in Fig 6.
+
+After construction of the automata, the next step of this algorithm is to find at least 
+one cycle over the states of the automaton. When a run starts from a particular state
+and comes to a state which it has already traversed, then we called that the automaton 
+has a cycle. It can have one or more cycle. But our aim is to find out at least one cycle.
+In the given state transition graph, it is visible that it has more than one cycle , say
+$ 1 \rightarrow 4 \rightarrow 9 \rightarrow 8 \rightarrow 3 \rightarrow 6 \rightarrow 16 \rightarrow
+7 \rightarrow 2 \rightarrow 5 \rightarrow 13 \rightarrow 15 \rightarrow 1 $.
+
+So in this case we can conclude that our considered control actions are safe and schedulable.
+If we could not find a single cycle then we would conclude that the taken control 
+actions are not safe and hence are not schedulable.
+
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=35mm, height=75mm]{automata.pdf}
+\end{center}
+%\vspace{-0.1in}
+\caption{{\em Automata construction with stable states}}
+\label{fig:automaton}
+\end{figure}
+
+
+
+
+
+

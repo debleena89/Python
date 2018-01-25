@@ -1,0 +1,15 @@
+number_of_state:4
+
+States:ra0,ra1,ra2,ra3
+
+Initial State:ra0
+
+number_of_final_states:1
+
+Final_states:ra2
+
+number_of_alphabets:2
+
+alphabets:a,b
+
+Transitions:(ra0,a,ra3),(ra0,b,ra0),(ra1,a,ra0),(ra1,b,ra2),(ra2,a,ra3),(ra2,b,ra0),(ra3,a,ra3),(ra3,b,ra1) 

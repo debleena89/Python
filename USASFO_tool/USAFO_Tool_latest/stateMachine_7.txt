@@ -1,0 +1,15 @@
+number_of_state:4
+
+States:A6,B6,C6,D6
+
+Initial State:A6
+
+number_of_final_states:1
+
+Final_states:D6
+
+number_of_alphabets:2
+
+alphabets:a,b
+
+Transitions:(A6,a,B6),(A6,b,A6),(B6,a,B6),(B6,b,D6),(C6,a,A6),(C6,b,B6),(D6,a,D6),(D6,b,C6)

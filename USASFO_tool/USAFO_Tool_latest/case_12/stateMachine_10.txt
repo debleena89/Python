@@ -1,0 +1,15 @@
+number_of_state:3
+
+States:A9,B9,C9
+
+Initial State:A9
+
+number_of_final_states:1
+
+Final_states:C9
+
+number_of_alphabets:2
+
+alphabets:a,b
+
+Transitions:(A9,a,A9),(A9,b,B9),(B9,a,C9),(B9,b,C9),(C9,a,B9),(C9,b,C9)

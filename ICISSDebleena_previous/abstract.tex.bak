@@ -1,0 +1,19 @@
+\begin{abstract}
+Cyber Physical Systems (CPS) such as a manufacturing plant, a power generator, 
+a power transmission substation etc. are usually controlled by a Supervisory 
+Control and Data Acquisition System. Due to the rise of 
+global terrorism, and cyber criminals, these systems are ripe targets of cyber 
+attacks. Among the various attack surfaces recognized by the community, the possibility of replacement of previously vetted control software, or other software components in the system by malicious variants by insider attackers is an acute possibility. In this paper, we propose an automated framework that addresses the 
+effect of code replacement attacks from the perspective of loss of control performance. Given a set of control components, a control objective 
+to be satisfied by the control ensemble, the question of schedulability and 
+synthesis of a scheduler that can ensure the desired control performance has been recently studied in literature. 
+In this paper, we extend the same philosophy to build an automata theoretic framework for assessment of 
+control hijack attacks on schedulability. We have built an end-to-end framework 
+that takes in a set of control components, their variants (after 
+code replacement), a control objective (e.g. exponential stability / reliability) to be guaranteed, and performs an automated schedulability assessment. Preliminary experiments of our framework on small and simple benchmarks look encouraging.
+\end{abstract}
+
+\begin{IEEEkeywords}
+ CyberPhysical System, \textcolor{red}{Cooperative Control}, \textcolor{red}{Code Replacement Attack}, \textcolor{red}{injection threat},
+ Exponential Stability,  $\omega$-regular language, B\"{u}chi Automaton, Schedulability
+\end{IEEEkeywords}

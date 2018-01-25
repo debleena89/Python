@@ -1,0 +1,15 @@
+number_of_state:3
+
+States:A5,B5,C5
+
+Initial State:A5
+
+number_of_final_states:1
+
+Final_states:C5
+
+number_of_alphabets:2
+
+alphabets:a,b
+
+Transitions:(A5,a,B5),(A5,b,A5),(B5,a,C5),(B5,b,A5),(C5,a,B5),(C5,b,C5)

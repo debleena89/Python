@@ -1,0 +1,101 @@
+\noindent
+\\\section{Solution Architecture} \label{sec4}
+\noindent
+ 
+%\includegraphics[width=3.0in]{tree_space.pdf}
+
+\textbf{ Approaches to solve the above stated Problem:}
+
+  There are $n$ number of control actions. In this paper, we are proposing an idea to 
+  detect code replacement attack. After a particular interval of time 
+  the system will check the schedulability of the system to assure that code 
+  replacement attack has not taken place. If it is found that the system is no more 
+  schedulable then it is concluded that an attack has taken place. The following steps
+  represent the necessary steps to solve the problem:
+  
+\begin{enumerate}
+ \item Formation of the control sequence: Generate all  $n ^ L $ possible control 
+       schedule sequences with $n$ control actions for each controller.
+       
+ \item Identify the set of stable states: For each of possible $n ^ L$ control 
+       schedule sequences, exponential stability is calculated, those states 
+       satisfies the condition that $\parallel A_{\delta_1} \dots A_{\delta_L}
+       \parallel < \rho $ are considered as stable states.
+       
+ \item Construct a B\"{u}chi automata with these stable states: Considering the set of
+       stable sequences as the set of states of a Finite State Machine, an automaton
+       is constructed. Here each state is accepting state. After constructing the
+       transition matrix if a cycle can be obtained over the states then it is a 
+       B\"{u}chi Automaton.
+       
+ \item If a B\"{u}chi automaton cannot be formed with these states then we can conclude that code
+       replacement attack happened otherwise the system is safe.
+\end{enumerate}
+   
+\begin{figure}
+\begin{center}
+\includegraphics[width=50mm, height=75mm]{algorithn.pdf}
+\end{center}
+%\vspace{-0.1in}
+\caption{{\em Flow chart of our idea}}
+\label{fig:Algorithm}
+\end{figure}
+
+   
+\textbf{Construction of B\"{u}chi automata:}
+
+B\"{u}chi Automaton is constructed over exponentially stable states. These states are 
+basically leaf nodes of a tree with $L$ depths and each node contains $n$ number of 
+children. So each leaf represents a stable combination of $L$ length control 
+actions. After filtering out the unstable states, remaining stable states are considered
+to construct the automata.
+
+
+An automaton or a finite state machine is considered as B\"{u}chi automata when there exist 
+at least one cycle over the states where there is at least one accepting or final state. 
+But in this case, all of the stable states are final states so if we find at least one cycle
+over these states, we can say that it is a B\"{u}chi automaton.
+
+The automata can be described as follows:
+$G = \langle S,I,M,T,{s_0} \rangle $
+
+\begin{itemize}
+ \item Here $S$ is set of states, which is $L$ length sequence of the control actions
+ \item $I$ is possible inputs, here it is set of control actions i.e $\{ A_0, A_1, ...\} $
+ \item $M$ represents the transition functions, which states that $ M: S$ x $I \rightarrow S$
+ \item $T$ is set of final states, here each state is final state because all of them are
+       exponentially stable.
+ \item ${s_0}$ is initial state
+\end{itemize}
+
+Here, each state which is the $L$ length sequences of the control actions, can take one of the 
+control actions as input and switch to another exponentially stable state. If the possible next 
+states are not exponentially stable then that transition will not be permissible. 
+The control action is appended at the  \textcolor{red}{leftmost} side of the state and to make it again of $L$ 
+length, one sequence from  \textcolor{red}{rightmost} side is discarded. Now this new state is compared 
+with all of the exponentially stable states including itself, if any match found, then this 
+transition is accepted from the previous state for this control action.
+
+
+Consider these following four states :
+
+  $A_0A_0A_1A_1$    $A_0A_1A_1A_0$    $A_1A_1A_0A_0$     $A_1A_0A_0A_1$     
+  
+  
+ \begin{figure}[h]
+\begin{center}
+\includegraphics[width=3.0in]{state_change_diagram.pdf}
+\end{center}
+\vspace{-0.1in}
+\caption{{\em State transition of the automaton}}
+\label{fig:automaton}
+\end{figure}
+   
+   Now the first state $A_0A_0A_1A_1$ when take $A_0$ as a input string then it 
+   becomes $A_0A_1A_1A_0$ which is the second state, first state with $A_1$ and $A_2$
+   are not stable states so are not present in the list. This second state with input 
+   state $A_0$ goes to the third state and the third state with input string $A_1$ goes 
+   to the fourth state. This is represented in the above diagram.
+
+
+

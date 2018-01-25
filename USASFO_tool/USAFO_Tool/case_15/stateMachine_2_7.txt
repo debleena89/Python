@@ -1,0 +1,15 @@
+number_of_state: 3
+
+States:qg0,qg1,qg2
+
+Initial State:qg0
+
+number_of_final_states: 1
+
+Final_states:qg0
+
+number_of_alphabets: 2
+
+alphabets:a,b
+
+Transitions:(qg0,a,qg1),(qg0,b,qg2),(qg1,a,qg2),(qg1,b,qg1),(qg2,a,qg1),(qg2,b,qg0)

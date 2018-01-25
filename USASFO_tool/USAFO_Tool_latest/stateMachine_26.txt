@@ -1,0 +1,15 @@
+number_of_state:4
+
+States:A15,B15,C15,D15
+
+Initial State:A15
+
+number_of_final_states:1
+
+Final_states:B15
+
+number_of_alphabets:2
+
+alphabets:a,b
+
+Transitions:(A15,a,B15),(A15,b,A15),(B15,a,C15),(B15,b,A15),(C15,a,D15),(C15,b,A15),(D15,a,D15),(D15,b,D15)

@@ -1,0 +1,15 @@
+number_of_state:2
+
+States:tug0,tug1
+
+Initial State:tug0
+
+number_of_final_states:1
+
+Final_states:tug1
+
+number_of_alphabets:2
+
+alphabets:a,b
+
+Transitions:(tug0,a,tug0),(tug0,b,tug1),(tug1,a,tug0),(tug1,b,tug1) 

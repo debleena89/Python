@@ -1,0 +1,60 @@
+\begin{frame}
+\begin{tcolorbox}[
+colframe=blue!25,
+colback=blue!10,
+coltitle=blue!20!black,  
+title= \scriptsize{\textcolor{red}{Verifying the scheduling objective}}]
+
+\tiny{\textcolor{blue}{Once the intersection automaton is constructed, the task of looking for cycles
+starting from the initial states is carried out. Cycle detection algorithms are
+standard in literature\footnote{\tiny{\textcolor{blue}{Clarke,Jr., Edmund M. and Grumberg, Orna and Peled, Doron A.,Model Checking}}}}}.
+
+\tiny{\textcolor{blue}{\bf Checking Emptiness}}
+\begin{itemize}
+ \item \tiny{\textcolor{blue}{Starting from the initiaql state, any strongly connected component that 
+ contains a cycle over an acceptaing state is considered as accepting run}}
+ \item \tiny{\textcolor{blue}{If no connected component has a cycle over accepting run then it is 
+       empty.}}
+       
+\end{itemize}
+
+
+
+\tiny{\textcolor{blue}{We implement the same for this work as well.}}
+\begin{itemize}
+\item \tiny{\textcolor{blue}{ Once a cycle is found, we traverse one cycle (every cycle is bound to contain a
+finite number of states)}}
+\item \tiny{\textcolor{blue}{check if each control loop is represented inside it.}}
+\item \tiny{\textcolor{blue}{If not, we proceed to the next cycle.}}
+\item \tiny{\textcolor{blue}{If all cycles are exhausted and we do not encounter any one which meets our scheduling
+objective, we conclude that the schedulability requirement is not met.}}
+\end{itemize}
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+\begin{tcolorbox}[
+colframe=blue!25,
+colback=blue!10,
+coltitle=blue!20!black,  
+title= \scriptsize{\textcolor{red}{Verifying the scheduling objective}}]
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=34mm]{state_copy_transition_cycle.pdf}
+\end{center}
+%\vspace{-0.1in}
+\caption{{\em \tiny{\textcolor{blue}{Cycle on the Intersection automata}}}}
+\label{transition}
+\end{figure}
+
+\tiny{\textcolor{blue}{Consider the example given in Figure 4. It can be
+seen that there are multiple cycles in the intersection automata, some of which
+do not contain one representative accepting state from each control loop (e.g.
+$\langle p_0, q_0, 1 \rangle \rightarrow \langle p_1, q_0, 1 \rangle \rightarrow \langle p_0, q_1, 1\rangle \dots)$. Thus it is necessary to examine
+each cycle to check for existence of at least one accepting state from each control
+loop, which is the main idea behind the notion of schedulability we adopt here.}}
+\end{tcolorbox}
+
+
+\end{frame}

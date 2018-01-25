@@ -1,0 +1,15 @@
+number_of_state:4
+
+States:A7,B7,C7,D7
+
+Initial State:A7
+
+number_of_final_states:1
+
+Final_states:D7
+
+number_of_alphabets:2
+
+alphabets:a,b
+
+Transitions:(A7,a,B7),(A7,b,A7),(B7,a,A7),(B7,b,C7),(C7,a,A7),(C7,b,D7),(D7,a,A7),(D7,b,B7)

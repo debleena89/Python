@@ -1,0 +1,59 @@
+\begin{frame}
+\begin{tcolorbox}[
+colframe=blue!25,
+colback=blue!10,
+coltitle=blue!20!black,  
+title= \scriptsize{\textcolor{red}{Problem Model}}]
+
+\begin{itemize}
+\item \tiny{\textcolor{blue}{ we consider a control application system consisting of
+an ensemble of concurrently active control applications / loops.}}
+
+\item \tiny{\textcolor{blue}{ Each control
+application is partitioned into a set of tasks. }}
+\item \tiny{\textcolor{blue}{ The control tasks communicate via
+a shared bus. The messages on the shared bus are also scheduled using a given
+arbitration policy.}}
+\item \tiny{\textcolor{blue}{ When a control loop executes, it carries out the set of tasks as
+specified by different states in its control state machine. }}
+
+\item \tiny{\textcolor{blue}{ Among all these states,
+some states require bus access, for which the control loop presents a request to
+the bus arbiter.}}
+
+\item \tiny{\textcolor{blue}{ These requests are considered by the bus arbiter / scheduler
+which decides on a bus scheduling strategy to grant bus access to the different
+control loops over time at different time slots.}}
+\end{itemize}
+
+
+%\tiny{\textcolor{blue}{As discussed in recent literature, we consider each participating control 
+%application is modeled as a B ̈uchi automaton [10]. B\"{u}chi automatons have been a
+%popular mechanism of choice for modeling applications that require finite au-
+%tomatons over infinite strings or words. The basic structure of such automatons
+%is similar to their finite counterparts, with the exception of the acceptance con-
+%ditions, as described below.}}
+\tiny{\textcolor{blue}{\textit{Definition: A B\"{u}chi automaton is described as a five tuple, $A = (Q, I, \delta, q_0 , F )$,
+where $Q$ is a finite set of states, $I$ is the input alphabet, $\delta : Q \times I \rightarrow Q$ is the
+transition function, $q_0$ is an initial state $(q_0 \epsilon Q)$ and $F$ is a set of final states
+that model an infinitary acceptance condition.}}}
+
+
+\tiny{\textcolor{blue}{\textit{Definition: An infinite word $\lambda \epsilon I^\omega$ over an input alphabet $I$ takes a B\"{u}chi
+automaton $A = (Q, I, \delta, q_0 , F )$ through an infinite sequence of states $q_0, q_1, q_2, \dots,$
+which describes a run of the automaton such that $q_{k+1} \epsilon \delta(q_k , \delta_k )$ where $k \epsilon N$
+and $\delta_k$ refers to the $k$ th symbol on the input word $\delta$. An infinite word is accepted
+by $A$ if some accepting state $q_f \epsilon F$ appears in the run $q_0, q_1, q_2,\dots$  infinitely
+often.}}}
+
+\tiny{\textcolor{blue}{Each control loop is designed with a control objective in view, and the overall
+functioning of the system is dependent on the individual control loops meeting
+control objectives, along with a strategy for co-operative control of the shared
+message bus through which the control loops communicate with each other.
+We consider one such control system functioning correctly if both the aboveTitle Suppressed Due to Excessive Length
+5 conditions are met. Meeting control objectives has been addressed in several
+recent articles, and is therefore, not discussed here. In contrast, we focus more
+on the schedulability aspect, as described below.}}
+
+\end{tcolorbox}
+\end{frame}

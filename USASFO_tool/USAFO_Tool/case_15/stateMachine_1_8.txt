@@ -1,0 +1,15 @@
+number_of_state: 4
+
+States:pf0,pf1,pf2,pf3
+
+Initial State:pf0
+
+number_of_final_states: 1
+
+Final_states:pf0
+
+number_of_alphabets: 2
+
+alphabets:a,b
+
+Transitions:(pf0,a,pf1),(pf0,b,pf2),(pf1,a,pf2),(pf1,b,pf1),(pf2,a,pf0),(pf2,b,pf3),(pf3,a,pf2),(pf3,b,pf1) 

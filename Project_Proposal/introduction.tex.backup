@@ -1,0 +1,45 @@
+
+
+The problem we are interested in is broadly as follows. We are given a set
+of control applications, each of which is partitioned into a set of tasks. Each of
+these tasks are mapped onto different processors. The processors and hence the
+tasks communicate over one or more shared buses. The tasks on each processor
+are scheduled using a given scheduling policy. The messages on the shared buses
+are also scheduled using a given arbitration policy.
+
+We will use the term platform to refer to such an (i) architecture (i.e., the
+processors, their connections via buses, and the mapping of tasks on the pro-
+cessors and messages on the buses), as well as (ii) the different scheduling and
+arbitration policies used.
+
+Now let us consider two tasks $T_1$ and $T_2$ belonging to the same control
+application, with $T_1$ and $T_2$ mapped onto different processors. $T_1$ for example
+can be a sensor task and T 2 can be a controller task. T 1 and T 2 communicate
+via a message stream $M$, consisting of an infinite sequence of message instances
+$m_1$, $m_2$ , . . .. Assuming that $T_1$ senses at a constant periodic rate, the delay
+from the instant $T_1$ senses to the time $T_2$ receives the sample depends on the
+
+(i) processing delay suffered by $T_1$ because of the other tasks scheduled on the
+same processor, and 
+
+(ii) the delay suffered by the messages sent by $T_1$ because
+of the other messages scheduled on the shared bus.
+
+For the moment, let us focus only on the message delays. The extension to
+account for delays arising from the task scheduling can be handled later in a
+similar fashion.
+
+The delays suffered by the messages will influence the performance of the
+control application. Since these delays will depend on the platform (e.g., the
+mapping of the tasks, scheduling policies, etc.), certain choices of the platform
+will result in acceptable control performance and others will not.
+
+In this setup, we are interested in answering questions of the form:
+\begin{itemize}
+ \item Given a platform and a set of control applications, does the platform meet
+the control performance requirements of the different applications?
+ \item  Given a set of control applications, can we synthesize a platform (or a part
+of it, e.g., the scheduling policy on a bus) to meet the control performance
+requirements of the different applications?
+\end{itemize}
+

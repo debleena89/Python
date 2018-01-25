@@ -1,0 +1,15 @@
+\begin{frame}
+\frametitle{ Our Planning }
+\tiny{\textcolor{blue} {FlexRay parameters shows that whether two messages will intersect or not
+depends on the base cycle and number of repeatitions. So our idea is:}}
+\begin{itemize}
+\item \tiny{\textcolor{blue} {Initially system has defined static scheduling sequence}}
+\item \tiny{\textcolor{blue} {That sequence says the base cycle and the number of repeatitions of each messages}}
+\item \tiny{\textcolor{blue} {Now if a message misses its allocated cycle due to delay and tries to access another cycle which is 
+      not granted for it, then a situation of conflict will arise.}}
+\item \tiny{\textcolor{blue} {We are trying to get a scheduler B\"{u}chi automata, that can capture the conflict.}}
+       
+\end{itemize}
+
+
+\end{frame}

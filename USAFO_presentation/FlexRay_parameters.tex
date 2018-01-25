@@ -1,0 +1,19 @@
+\begin{frame}
+\frametitle{ FlexRay Parameters }
+\tiny{\textcolor{blue} {}}
+
+
+\begin{itemize}
+\item \tiny{\textcolor{blue}{Number of communication cycle $n$}}
+\item \tiny{\textcolor{blue}{The cycle duration $t_c$}}
+\item \tiny{\textcolor{blue}{Number of available static slots in one cycle $n$}}
+\item \tiny{\textcolor{blue}{Message size $l_m$ and takes period $p_m$}}
+\item \tiny{\textcolor{blue}{Message repetition $r_m = (p_m/t_c)$}}
+\item \tiny{\textcolor{blue}{Message $m$ is scheduled in the first cycle called Base cycle $b_m$}}
+\item \tiny{\textcolor{blue}{A Message $m$ is scheduled in a cycle $cc_i$ when $i = (b_m + r_m \cdot a) \mod k, a \epsilon {\mathbb{N}_0}$}}
+\item \tiny{\textcolor{blue}{If $\forall i,j \epsilon {\mathbb{N}_0} : (b_{m_1} + r_{m_1}\cdot i) \mod k \neq (b_{m_2} + r_{m_2}\cdot j) \mod k$ 
+then $m_1$ and $m_2$ will not intersect}}
+      
+\end{itemize}
+
+\end{frame}

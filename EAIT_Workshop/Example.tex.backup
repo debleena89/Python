@@ -1,0 +1,98 @@
+\section{Illustrative examples} \label{sec5}
+In this section, we have described some examples which depicts the difference of intersection
+automaton before and after the code replacement attack. 
+Let us consider three control automata as shown in Fig.\ref{automata_orginal}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=50mm]{Automaton_original.pdf}
+\end{center}
+%\vspace{-0.1in}
+\caption{{\em product automata associated with flags}}
+\label{automata_orginal}
+\end{figure}
+
+The intersection automaton of the geven automata will look like Fig.\ref{automata_orginal}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=50mm]{graph_original.eps}
+\end{center}
+%\vspace{-0.1in}
+\caption{{\em product automata associated with flags}}
+\label{graph_orginal}
+\end{figure}
+
+Now we will see  what happens after each of the automaton get replaced.
+
+After P automaton replacement the automaton representing the control 
+loops will look like Fig. \ref{automata_p_replaced}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=50mm]{graph_after_p_replacement.pdf}
+\end{center}
+%\vspace{-0.1in}
+\caption{{\em product automata associated with flags}}
+\label{automata_p_replaced}
+\end{figure}
+
+
+The intersection automaton will look after P automaton replacement Fig.\ref{graph_p_replaced}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=50mm]{graph_p_replaced.eps}
+\end{center}
+%\vspace{-0.1in}
+\caption{{\em product automata associated with flags}}
+\label{graph_p_replaced}
+\end{figure}
+
+After Q automaton replacement the control loops will look like Fig. \ref{automata_q_replaced}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=50mm]{graph_after_q_replacement.pdf}
+\end{center}
+%\vspace{-0.1in}
+\caption{{\em product automata associated with flags}}
+\label{automata_q_replaced}
+\end{figure}
+
+
+
+The intersection automaton will look after Q automaton replacement Fig.\ref{graph_q_replaced}
+
+ \begin{figure}
+\begin{center}
+\includegraphics[width=50mm]{graph_q_replaced.eps}
+\end{center}
+%\vspace{-0.1in}
+\caption{{\em product automata associated with flags}}
+\label{graph_q_replaced}
+\end{figure}
+
+
+After R automaton replacement the control loops will look like Fig. \ref{automata_r_replaced}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=50mm]{graph_after_r_replacement.pdf}
+\end{center}
+%\vspace{-0.1in}
+\caption{{\em product automata associated with flags}}
+\label{automata_r_replaced}
+\end{figure}
+
+
+The intersection automaton will look after R automaton replacement Fig.\ref{graph_r_replaced}
+
+  \begin{figure}
+\begin{center}
+\includegraphics[width=50mm]{graph_r_replaced.eps}
+\end{center}
+%\vspace{-0.1in}
+\caption{{\em product automata associated with flags}}
+\label{graph_r_replaced}
+\end{figure}

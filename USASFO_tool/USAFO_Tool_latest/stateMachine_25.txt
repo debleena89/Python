@@ -1,0 +1,15 @@
+number_of_state:4
+
+States:A14,B14,C14,D14
+
+Initial State:A14
+
+number_of_final_states:1
+
+Final_states:C14
+
+number_of_alphabets:2
+
+alphabets:a,b
+
+Transitions:(A14,a,B14),(A14,b,A14),(B14,a,C14),(B14,b,A14),(C14,a,D14),(C14,b,A14),(D14,a,D14),(D14,b,D14)

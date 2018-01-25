@@ -1,0 +1,32 @@
+\begin{abstract}
+Industrial Control Systems (ICS) used in manufacturing, power generators
+and other critical infrastructure monitoring and control are  ripe targets for cyber attacks
+these days. Examples of such attacks are abundant such as attacks on Iranian nuclear enrichment plant with Stuxnet in 2009,
+on German steel plant in 2014, Ukrainian power system in 2015 and 2016 etc.
+ Usually in ICS, multiple control loops work concurrently and share various resources including
+communication bus through which they interact with sensors and actuators. The
+real-time scheduling of concurrent control applications while competing for shared 
+resources, is done with delicate balance between performance and real-time constraints.
+A possible insider attack could be the replacement of a previously vetted control application 
+or other software components in the system,
+during a system update.  In this paper, we
+propose an automated framework that addresses the effect of such 
+code replacement attacks from the perspective of loss of control
+performance. Given a set of control components, a control
+objective to be satisfied by the control ensemble, the question
+of schedulability and synthesis of a scheduler that can ensure
+the desired control performance has been recently studied in the 
+literature. In this paper, we extend this idea further to 
+build an automata theoretic framework for assessment of code
+replacement attacks on schedulability. We have built an end-to-end framework that takes in a set of control components,
+their variants (after code replacement), a control objective
+to be guaranteed, and performs an automated schedulability
+assessment. We report some preliminary experiments of our
+framework on simple benchmarks.
+
+\end{abstract}
+
+\begin{IEEEkeywords}
+ CyberPhysical System, \textcolor{black}{Cooperative Control}, \textcolor{black}{Code Replacement Attack}, 
+ \textcolor{black}{Insider threat},  $\omega$-regular language, B\"{u}chi Automaton, Schedulability
+\end{IEEEkeywords}

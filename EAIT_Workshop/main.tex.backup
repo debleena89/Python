@@ -1,0 +1,18 @@
+\documentclass[conference]{IEEEtran}
+\usepackage{graphicx}
+\title{ An automata theoretic framework for analyzing effects
+of Control Hijacking on Scheduling}
+\begin{document}
+% 					\textsuperscript{2} Advanced Systems Laboratory, DRDO}
+\maketitle
+\input{abstract}
+\input{introduction}
+\input{Motivating_examples}
+\input{solution}
+\input{Example}
+\input{Reference}
+%\newpage
+%{\scriptsize
+\bibliographystyle{abbrv}
+\bibliography{main}
+\end{document}

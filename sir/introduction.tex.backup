@@ -1,0 +1,50 @@
+\section{Introduction} \label{sec:intro}
+\noindent
+Most critical infrastructures such as power grid, water / sewage control, power generation plants, industrial automation etc., are cyber-physical systems (CPS). Cyber-Physical systems have two major interacting components -- a component with physical dynamics governed by laws of physics -- modeled with partial differential equations, another component -- control, computing and networking which controls the physical dynamics. For very large and geographically distributed cyber physical systems, the control trajectory is designed to be stable and reliable with very complex distributed as well as centralized control. The control components today 
+routinely involve a non-trivial amount of software, running on embedded control units on-board, to support and run any moderately sophisticated CPS infrastructure.
+
+In recent history, cyber physical systems have been a popular victim of choice for so called cyber attacks, the effects of which have been moderate to as ravaging as blackouts~\cite{} or \textcolor{black}{financial loss}~\cite{}. This has prompted 
+NIST~\cite{nist} to promote cyber security frameworks for critical infrastructure as 
+one of the themes of immediate research attention. Given that no cyber security framework is full proof, significant research thrust is being invested in recent times to develop techniques that allow us to continually monitor the physical dynamics of these systems and look for any anomalies that could be indicative of cyber attack induced problems. Early detection of system dynamics changes would allow us to contain the damage by immediately islanding parts of the system which seem to be the origin areas in the infrastructure. 
+
+Research investment in cyber security of CPS is 
+extremely crucial for developing novel technology for cyber attacks detection, prevention, and countermeasures. \textcolor{black} {Systematic} studies on different sources of cyber-attacks have revealed myriads of possibilities by which these cyber threats can 
+propagate inside a CPS infrastructure. A popular and widely acknowledged means of cyber-attack, {\em phishing attacks}, originate when someone whose desktop
+is connected to the control network opens an email containing a payload, which can then
+take over the control of the business network, and in turn the control network. However, since
+much of the cyber threat models also assume insider knowledge or sabotage, even an isolated
+control network is not devoid of cyber-attack possibilities. A popular example  is the notorious Sony Pictures hack~\cite{SonyHack2014} which leaked a release of confidential data from the film studio Sony Pictures. A person with local or remote access
+to the equipment of the physical plant, or access to the various interfaces such as programmable
+logic controllers (PLCs) or other Intelligent Electronic Device (IEDs) that are connected to the
+physical system for measurements and control can exploit a vulnerability in these devices to
+induce an attack on the system. One could also gain access to the control network, and create
+various kinds of man-in-the-middle attacks by either suppressing measurements or control
+actuation signals, replaying stale measurements or actuation signals, or even injecting
+maliciously planned false data. These kinds of attacks would then mislead the controllers, and
+wrong control actions could lead to disastrous industrial accidents. One could also hack into the
+controllers or the various other computing elements in the control center such as the process control servers by
+exploiting some vulnerabilities in their design and attack the cyber physical system. In fact, in
+case of the Stuxnet worm~\cite{stuxnet}, \textcolor{black} {vulnerabilities} in the Siemens SCADA system were exploited. While individual areas of cyber security research have received
+much attention in academia (e.g. cryptography; crypto-analysis; network
+security in the form of firewall and other perimeter security techniques, and intrusion detection, anti-virus software, and static analysis of software to detect vulnerabilities and zero-day attacks;
+hardware Trojan detection) much of these research focus on guarding IT systems in business and corporate information infrastructure. 
+
+The focus of study in this paper is code replacement attacks, wherein some or parts of a control component 
+are compromised by tampering their operational modality 
+by modifying the software running inside. 
+Code replacement \cite{GhoshHD12} by internal employees, phishing attacks or other means of code injection
+have been known to be a vector for cyber-attacks for a while. Stuxnet analysis showed that such
+attacks were part of the repertoire in that case. In an industrial control environment with real time control components, code replacement can lead to disaster, for example, slowing down a
+particular process in the industrial manufacturing can cascade a chain of failures in the whole
+assembly line. In this paper, we propose an idea that will demonstrate that such
+attacks for real-time SCADA systems can be guarded against by statically analyzing the
+legitimate control programs, and constructing an omega-regular language based timing signature,
+which can then be periodically checked on the running components to distinguish a replaced
+component from the original component. The timing signature based analysis of omega-regular language
+was originally proposed by researchers in \cite{WeissFAA09}, in the context of real-time communication scheduling
+in SCADA systems. In this paper, we plan to take the idea further into the arena of guarding against cyber-attacks on real-time industrial systems.
+
+This paper is organized as follows. Section \ref{sec2} describes the Background theory of this work, 
+section \ref{sec3} formally defines our problem statement, then section \ref{sec4} gives 
+the solution architecture and section \ref{sec5} and \ref{sec6} show the illustrative example
+and experiments respectively. At last section \ref{sec7} gives the conslusion.

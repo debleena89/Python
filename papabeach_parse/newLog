@@ -1,0 +1,410 @@
+FileAST: 
+  Decl: vsupply_adc_buf, [], [], []
+    TypeDecl: vsupply_adc_buf, []
+      Struct: adc_buf
+  Decl: vservos_adc_buf, [], [], []
+    TypeDecl: vservos_adc_buf, []
+      Struct: adc_buf
+  Decl: mode, [], [], []
+    TypeDecl: mode, []
+      IdentifierType: ['int']
+  Decl: time_since_last_mega128, [], ['static'], []
+    TypeDecl: time_since_last_mega128, []
+      IdentifierType: ['int']
+  Decl: time_since_last_ppm, [], ['static'], []
+    TypeDecl: time_since_last_ppm, []
+      IdentifierType: ['int']
+  Decl: radio_ok, [], [], []
+    TypeDecl: radio_ok, []
+      IdentifierType: ['int']
+  Decl: mega128_ok, [], [], []
+    TypeDecl: mega128_ok, []
+      IdentifierType: ['int']
+  Decl: radio_really_lost, [], [], []
+    TypeDecl: radio_really_lost, []
+      IdentifierType: ['int']
+  Decl: failsafe, ['const'], ['static'], []
+    ArrayDecl: []
+      TypeDecl: failsafe, ['const']
+        IdentifierType: ['int']
+    InitList: 
+      Constant: int, 0
+      Constant: int, 0
+      Constant: int, 0
+      Constant: int, 0
+      Constant: int, 0
+      Constant: int, 0
+      Constant: int, 0
+      Constant: int, 0
+      Constant: int, 0
+  Decl: ppm_cpt, [], ['static'], []
+    TypeDecl: ppm_cpt, []
+      IdentifierType: ['int']
+  Decl: last_ppm_cpt, [], ['static'], []
+    TypeDecl: last_ppm_cpt, []
+      IdentifierType: ['int']
+  FuncDef: 
+    Decl: to_autopilot_from_last_radio, [], ['static'], []
+      FuncDecl: 
+        ParamList: 
+          Typename: None, []
+            TypeDecl: None, []
+              IdentifierType: ['void']
+        TypeDecl: to_autopilot_from_last_radio, []
+          IdentifierType: ['void']
+    Compound: 
+      Decl: i, [], [], []
+        TypeDecl: i, []
+          IdentifierType: ['int']
+      For: 
+        Assignment: =
+          ID: i
+          Constant: int, 0
+        BinaryOp: <
+          ID: i
+          ID: RADIO_CTL_NB
+        UnaryOp: p++
+          ID: i
+        Assignment: =
+          ArrayRef: 
+            StructRef: .
+              ID: to_mega128
+              ID: channels
+            ID: i
+          ArrayRef: 
+            ID: last_radio
+            ID: i
+      Assignment: =
+        StructRef: .
+          ID: to_mega128
+          ID: status
+        TernaryOp: 
+          ID: radio_ok
+          FuncCall: 
+            ID: _BV
+            ExprList: 
+              ID: STATUS_RADIO_OK
+          Constant: int, 0
+      Assignment: |=
+        StructRef: .
+          ID: to_mega128
+          ID: status
+        TernaryOp: 
+          ID: radio_really_lost
+          FuncCall: 
+            ID: _BV
+            ExprList: 
+              ID: RADIO_REALLY_LOST
+          Constant: int, 0
+      If: 
+        ID: last_radio_contains_avg_channels
+        Compound: 
+          Assignment: |=
+            StructRef: .
+              ID: to_mega128
+              ID: status
+            FuncCall: 
+              ID: _BV
+              ExprList: 
+                ID: AVERAGED_CHANNELS_SENT
+          Assignment: =
+            ID: last_radio_contains_avg_channels
+            ID: FALSE
+      Assignment: =
+        StructRef: .
+          ID: to_mega128
+          ID: ppm_cpt
+        ID: last_ppm_cpt
+      Assignment: =
+        StructRef: .
+          ID: to_mega128
+          ID: vsupply
+        BinaryOp: *
+          FuncCall: 
+            ID: VoltageOfAdc
+            ExprList: 
+              BinaryOp: /
+                StructRef: .
+                  ID: vsupply_adc_buf
+                  ID: sum
+                ID: AV_NB_SAMPLE
+          Constant: int, 10
+      Assignment: =
+        StructRef: .
+          ID: to_mega128
+          ID: vsupply
+        Constant: int, 0
+  FuncDef: 
+    Decl: send_data_to_autopilot_task, [], [], []
+      FuncDecl: 
+        ParamList: 
+          Typename: None, []
+            TypeDecl: None, []
+              IdentifierType: ['void']
+        TypeDecl: send_data_to_autopilot_task, []
+          IdentifierType: ['void']
+    Compound: 
+      If: 
+        BinaryOp: &&
+          UnaryOp: !
+            FuncCall: 
+              ID: SpiIsSelected
+          ID: spi_was_interrupted
+        Compound: 
+          Assignment: =
+            ID: spi_was_interrupted
+            ID: FALSE
+          FuncCall: 
+            ID: to_autopilot_from_last_radio
+          FuncCall: 
+            ID: spi_reset
+  FuncDef: 
+    Decl: main, [], [], []
+      FuncDecl: 
+        ParamList: 
+          Typename: None, []
+            TypeDecl: None, []
+              IdentifierType: ['void']
+        TypeDecl: main, []
+          IdentifierType: ['int']
+    Compound: 
+      FuncCall: 
+        ID: uart_init_tx
+      FuncCall: 
+        ID: uart_print_string
+        ExprList: 
+          Constant: string, "FBW Booting $Id: main.c,v 1.1 2006/06/15 09:27:07 casse Exp $\n"
+      FuncCall: 
+        ID: adc_init
+      FuncCall: 
+        ID: adc_buf_channel
+        ExprList: 
+          Constant: int, 3
+          UnaryOp: &
+            ID: vsupply_adc_buf
+      FuncCall: 
+        ID: adc_buf_channel
+        ExprList: 
+          Constant: int, 6
+          UnaryOp: &
+            ID: vservos_adc_buf
+      FuncCall: 
+        ID: timer_init
+      FuncCall: 
+        ID: servo_init
+      FuncCall: 
+        ID: ppm_init
+      FuncCall: 
+        ID: spi_init
+      While: 
+        Constant: int, 1
+        Compound: 
+          FuncCall: 
+            ID: test_ppm_task
+          FuncCall: 
+            ID: check_mega128_values_task
+          FuncCall: 
+            ID: send_data_to_autopilot_task
+          FuncCall: 
+            ID: check_failsafe_task
+          If: 
+            FuncCall: 
+              ID: timer_periodic
+            Compound: 
+              Decl: _1Hz, [], ['static'], []
+                TypeDecl: _1Hz, []
+                  IdentifierType: ['int']
+              Decl: _20Hz, [], ['static'], []
+                TypeDecl: _20Hz, []
+                  IdentifierType: ['int']
+              UnaryOp: p++
+                ID: _1Hz
+              UnaryOp: p++
+                ID: _20Hz
+              If: 
+                BinaryOp: >=
+                  ID: _1Hz
+                  Constant: int, 60
+                Compound: 
+                  Assignment: =
+                    ID: _1Hz
+                    Constant: int, 0
+                  Assignment: =
+                    ID: last_ppm_cpt
+                    ID: ppm_cpt
+                  Assignment: =
+                    ID: ppm_cpt
+                    Constant: int, 0
+              If: 
+                BinaryOp: >=
+                  ID: _20Hz
+                  Constant: int, 3
+                Compound: 
+                  Assignment: =
+                    ID: _20Hz
+                    Constant: int, 0
+                  FuncCall: 
+                    ID: servo_transmit
+              If: 
+                BinaryOp: <
+                  ID: time_since_last_mega128
+                  ID: STALLED_TIME
+                UnaryOp: p++
+                  ID: time_since_last_mega128
+              If: 
+                BinaryOp: <
+                  ID: time_since_last_ppm
+                  ID: REALLY_STALLED_TIME
+                UnaryOp: p++
+                  ID: time_since_last_ppm
+      Return: 
+        Constant: int, 0
+  FuncDef: 
+    Decl: test_ppm_task, [], [], []
+      FuncDecl: 
+        ParamList: 
+          Typename: None, []
+            TypeDecl: None, []
+              IdentifierType: ['void']
+        TypeDecl: test_ppm_task, []
+          IdentifierType: ['void']
+    Compound: 
+      If: 
+        ID: ppm_valid
+        Compound: 
+          Assignment: =
+            ID: ppm_valid
+            ID: FALSE
+          UnaryOp: p++
+            ID: ppm_cpt
+          Assignment: =
+            ID: radio_ok
+            ID: TRUE
+          Assignment: =
+            ID: radio_really_lost
+            ID: FALSE
+          Assignment: =
+            ID: time_since_last_ppm
+            Constant: int, 0
+          FuncCall: 
+            ID: last_radio_from_ppm
+          If: 
+            ID: last_radio_contains_avg_channels
+            Compound: 
+              Assignment: =
+                ID: mode
+                FuncCall: 
+                  ID: MODE_OF_PPRZ
+                  ExprList: 
+                    ArrayRef: 
+                      ID: last_radio
+                      ID: RADIO_MODE
+          If: 
+            BinaryOp: ==
+              ID: mode
+              ID: MODE_MANUAL
+            Compound: 
+              FuncCall: 
+                ID: servo_set
+                ExprList: 
+                  ID: last_radio
+        If: 
+          BinaryOp: &&
+            BinaryOp: ==
+              ID: mode
+              ID: MODE_MANUAL
+            ID: radio_really_lost
+          Compound: 
+            Assignment: =
+              ID: mode
+              ID: MODE_AUTO
+      If: 
+        BinaryOp: >=
+          ID: time_since_last_ppm
+          ID: STALLED_TIME
+        Compound: 
+          Assignment: =
+            ID: radio_ok
+            ID: FALSE
+      If: 
+        BinaryOp: >=
+          ID: time_since_last_ppm
+          ID: REALLY_STALLED_TIME
+        Compound: 
+          Assignment: =
+            ID: radio_really_lost
+            ID: TRUE
+  FuncDef: 
+    Decl: check_failsafe_task, [], [], []
+      FuncDecl: 
+        ParamList: 
+          Typename: None, []
+            TypeDecl: None, []
+              IdentifierType: ['void']
+        TypeDecl: check_failsafe_task, []
+          IdentifierType: ['void']
+    Compound: 
+      If: 
+        BinaryOp: ||
+          BinaryOp: &&
+            BinaryOp: ==
+              ID: mode
+              ID: MODE_MANUAL
+            UnaryOp: !
+              ID: radio_ok
+          BinaryOp: &&
+            BinaryOp: ==
+              ID: mode
+              ID: MODE_AUTO
+            UnaryOp: !
+              ID: mega128_ok
+        Compound: 
+          FuncCall: 
+            ID: servo_set
+            ExprList: 
+              ID: failsafe
+  FuncDef: 
+    Decl: check_mega128_values_task, [], [], []
+      FuncDecl: 
+        ParamList: 
+          Typename: None, []
+            TypeDecl: None, []
+              IdentifierType: ['void']
+        TypeDecl: check_mega128_values_task, []
+          IdentifierType: ['void']
+    Compound: 
+      If: 
+        BinaryOp: &&
+          UnaryOp: !
+            FuncCall: 
+              ID: SpiIsSelected
+          ID: spi_was_interrupted
+        Compound: 
+          If: 
+            ID: mega128_receive_valid
+            Compound: 
+              Assignment: =
+                ID: time_since_last_mega128
+                Constant: int, 0
+              Assignment: =
+                ID: mega128_ok
+                ID: TRUE
+              If: 
+                BinaryOp: ==
+                  ID: mode
+                  ID: MODE_AUTO
+                FuncCall: 
+                  ID: servo_set
+                  ExprList: 
+                    StructRef: .
+                      ID: from_mega128
+                      ID: channels
+      If: 
+        BinaryOp: ==
+          ID: time_since_last_mega128
+          ID: STALLED_TIME
+        Compound: 
+          Assignment: =
+            ID: mega128_ok
+            ID: FALSE
+I am called

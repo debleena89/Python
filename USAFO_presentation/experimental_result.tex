@@ -1,0 +1,21 @@
+\begin{frame}
+5
+Experimental Results
+We have built an end-to-end tool in Python for schedulability attack detection.
+The tool takes in a set of control loop descriptions, computes their intersection
+and implements the cycle detection step. The tool has been applied to a number
+of small examples of synthetic control applications and their variants. Due to
+the lack of standard open source benchmarks in this domain, we have performed
+all our experiments on synthetic benchmarks os various representative sizes,
+varying the number of individual control loops, and the number of constituent
+states of each. For each row, for a fixed number of automatons, we took up the
+initial descriptions and created random variants of the modified counterparts,Title Suppressed Due to Excessive Length
+9
+and carried out our analysis. As expected, our tool was able to flag out the
+schedulability violation in each of the cases. Table 1 presents the details of our
+experiments. Column 2 mentions the number of control applications, while the
+next presents the number of states in the intersection automaton. Column 4
+shows the number of states in the cycle. The final column presents the total
+time required by our tool for analyzing the schedulability violation in seconds.
+ 
+\end{frame}

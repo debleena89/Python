@@ -1,0 +1,15 @@
+number_of_state:4
+
+States:A10,B10,C10,D10
+
+Initial State:A10
+
+number_of_final_states:1
+
+Final_states:C10
+
+number_of_alphabets:2
+
+alphabets:a,b
+
+Transitions:(A10,a,A10),(A10,b,B10),(B10,a,C10),(B10,b,D10),(C10,a,D10),(C10,b,B10),(D10,a,A10),(D10,b,D10)

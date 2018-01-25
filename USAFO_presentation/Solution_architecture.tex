@@ -1,0 +1,20 @@
+\begin{frame}
+\frametitle{ Solution Architecture}
+\begin{itemize}
+   \item \tiny{\textcolor{blue}{ We are given a set of $n$ control loops}}
+ \item \tiny{\textcolor{blue}{ Bus access states marked as the accepting ones}}
+ \item \tiny{\textcolor{blue}{Scheduling objective is to be able to grant bus access infinitely often to each control loop}}
+\end{itemize}
+\tiny{\textcolor{blue}{To check if the system is safe and schedulable, we carry out the following steps:}}
+    \begin{itemize}
+       \item \tiny{\textcolor{blue}{Computing the product of the individual control loops using B\"{u}chi automata
+                                      Intersection construction}}
+        \item \tiny{\textcolor{blue}{Looking for the presence of a cycle \footnote{\tiny{\textcolor{blue}{
+                                    After the product is computed, we look for the presence of a cycle that
+                                     contains at least one state from each control loop. In other words, on any
+                                      infinite run of the product automaton, each control loop repeats infinitely
+                                   often and is therefore, granted bus access infinitely often as well.}}}}}
+
+\end{itemize}
+
+\end{frame}

@@ -1,0 +1,28 @@
+\begin{table}[ht]
+\caption{Nonlinear Model Results}
+\centering
+\begin{tabular}{c c c c}
+\hline
+\hline %inserts double horizontal lines
+Case & No. of         & No. of states   &  No. of states in   & No. of    &  Time taken for        &   Time taken for             
+     & of             &  in each        &  the intersection   & statesin  &  product construction  &    cycle construction    
+     & Statemachines  & statemachines   &  automata          & the cycle  &                        &                           \\
+\hline
+
+1 & 2 & 3 and 2 & 4 & 6 &  0.46968    & 1.08909
+\\
+2 & 50 & 837 & 970 &  &  & & \\
+
+3 & 50 & 837 & 970 &  &  & &\\
+
+4 & 50 & 837 & 970 &  &  & &\\
+5 & 50 & 837 & 970 &  &  & &\\
+6 & 50 & 837 & 970 &  &  & & \\
+7 & 50 & 837 & 970 &  &  & &[1ex] 
+
+\hline
+
+\end{tabular}
+\label{table:nonlin}
+
+\end{table}

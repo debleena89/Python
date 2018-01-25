@@ -1,0 +1,59 @@
+\begin{frame}
+
+% \begin{tcolorbox}[
+% colframe=blue!25,
+% colback=blue!10,
+% coltitle=blue!20!black,  
+% title= \scriptsize{\textcolor{red}
+\frametitle{Cyber Physical Attacks}
+
+\tiny {\textcolor{blue}{Cyber Physical Systems (CPS) such as a manufacturing plant, a power generator, a power transmission substation etc.
+are usually controlled by a Supervisory Control and Data Acquisition System. Others CPS example include drive-by-wire automotive,
+fly-by-wire flight control systems etc. Among the various attack surfaces recognized by the community, the possibility of
+replacement of previously vetted control software, or other software components in the system by mailicious variants by insider
+attackers is an acute possibility. Recent studies have shown that almost 29\% of all attacks are insider attacks.} }\\
+% \end{tcolorbox}
+
+% \begin{tcolorbox}[
+% colframe=blue!25,
+% colback=blue!10,
+% coltitle=blue!20!black,  
+% title= \scriptsize{\textcolor{red}
+
+
+\textbf{\textcolor{red}{Example:}}
+
+
+\begin{itemize}
+
+\item \tiny {\textcolor{blue}{This has prompted NIST~\footnote{\tiny {\textcolor{blue}{http://www.nist.gov}}} to promote cyber security frameworks 
+for critical infrastructure~\footnote{\tiny {\textcolor{blue}{Framework for Improving
+        Critical Infrastructure Cybersecurity}}} as one of the themes of immediate 
+research attention.}}
+
+\item \tiny{\textcolor{blue}{ Iranian nuclear enrichment plant with Stuxnet in 2009.}} 
+
+\item \tiny{\textcolor{blue}{German steel plant in 2014.}}
+
+\item \tiny{\textcolor{blue}{Ukrainian power system in 2015 and 2016.}}
+
+\end{itemize}
+
+
+% \begin{tcolorbox}[
+% colframe=blue!25,
+% colback=blue!10,
+% coltitle=blue!20!black,  
+% title= \scriptsize{\textcolor{red}{Aim}}]
+
+
+\textbf{\textcolor{red}{Aim:}}
+
+\tiny {\textcolor{blue}{Given that no cyber security framework is full proof, significant
+research thrust is being invested in recent times to develop techniques that allow us 
+to continually monitor the physical dynamics of these systems and look for any anomalies
+that could be indicative of cyber attack induced problems. Early detection of system 
+dynamics changes would allow us to contain the damage by immediately islanding parts 
+of the system which point to possible origin areas in the infrastructure. } }
+
+\end{frame}

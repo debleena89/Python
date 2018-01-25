@@ -1,0 +1,19 @@
+\section{Related Work} \label{sec2}
+Replacement attacks \cite{GhoshHD12} carried out by internal employees, phishing attacks, code injection attacks have been known to be a vector for cyber-attacks for a while. Stuxnet analysis showed that such
+attacks were part of the repertoire in that case.  The work in \cite{DBLP:conf/acns/MingXLW0M15} %\cite{DBLP:journals/virology/MingXLWLM17} 
+describes the idea of replacement attacks on malware behaviour. Malware belonging to the
+same family are expected to show similar behaviour. If a replacement attack changes the behaviour specification, then in-spite of being from the same family, their behaviour will be different. Malwares interact with the operating system through system calls. A system call dependency graph (SCDG) shows the data flow dependency among system calls. In this paper, the authors propose the idea of SCDG replacement and illustrate the after replacement effect on malware behaviour. To detect the attack, malware analysts are required to put extra efforts to re-analyse similar samples. Further,  \cite{DBLP:conf/vee/GhoshHD12} represents how the protected PVMs (Process-level virtual machines) can be replaced with attacked VMs which make the application more vulnerable to analysis and modification. The analysis of  replacement attacks on a generic watermarking system is described in \cite{DBLP:conf/ccs/KirovskiP02}. \\
+
+\noindent
+The idea of automata based control scheduling has been discussed in \cite{WeissA07}. They express
+the communication interface among the control components using a formal language. This work illustrates how the interfaces of discrete-time switched linear systems
+can be expressed using a B\"{u}chi automaton. Authors in \cite{AlurW08}  describe CPU scheduling
+in terms of finite machines over infinite words. The infinite words depict the particular time 
+slot for which a particular resource can be allotted to a specific control component. The work in \cite{WeissFAA09} applies automata based scheduling on networks, to formalize the effect of bus scheduling and network stability. Further, \cite{GhoshMDHD16} describes how the interfacing among 
+the control actions can be modeled by B\"{u}chi automata to guarantee stable and reliable
+scheduling. This work presents a methodology for construction of a scheduler automata 
+where each state represents one particular control schedule while generating the permissible 
+schedule in terms of a $\omega$-regular language. Our work is an application framework based on the contributions above, with specific focus to component replacement attacks and schedulability analysis. While one of the major control objectives discussed in the above contributions has been exponential stability, which we assume to be satisfied for individual control components, we propose to use a fairness schedule in our work, that requires a different modeling strategy, as explained in the following. More importantly, our work here can be considered as an end-to-end framework on automata-based schedulability assessment. \\
+  
+ 
+  

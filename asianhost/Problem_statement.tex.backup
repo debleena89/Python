@@ -1,0 +1,73 @@
+\section{Problem statement and Motivating Example} \label{sec3}
+\noindent
+The aim of our work is to detect code replacement attack. Code replacement attack
+signifies some changes to the system. We are trying to capture the results of the 
+attack from the perspective of scheduling.  Here in this work, we are examining
+how this changes to the system effects the schedulability of the system. 
+
+To explain our problem we are considering a system consisting of many control
+applications. Each of these control applications is partitioned into a set of
+tasks. Each of these tasks are mapped onto different processors. These tasks 
+of the controllers communicates via shared buses. The tasks on each processors
+are scheduling using a given scheduling policy. The messages on the shared buses
+are also scheduled using a given arbitration policy. When a process is executed by processor
+it goes through a number of states before termination. Among all these states some
+states require bus access. Those states are allocated to the bus when their turn
+comes. 
+
+
+
+In this paper we are proposing the idea of how to detect code replacement attack. we are considering that 
+each participating control application is a B\"{u}chi Automaton. In this work we have performed intersection  
+on the given B\"{u}chi Automaton as stated in the Background section and want to get such a cycle where the
+run of the cycle passes through the accepting state of each automaton.
+\begin{figure}
+\begin{center}
+\includegraphics[width=50mm]{original.pdf}
+\end{center}
+%\vspace{-0.1in}
+\caption{{\em control automaton before code replacement attack}}
+\label{state}
+\end{figure}
+
+In Fig.\ref{state} we can see three automaton $P,Q and R$ representing three different control applications.
+Each has one initial state and acceptance state. The acceptance states are the bus accessing state
+of the automaton.
+As we have stated earlier that we are trying to observe the effect 
+of code replacement attack in terms of scheduling sequence, our system will be examinig the
+schedulability after a particular interval of time. At one particular time we will get the 
+intersection automaton as shown in Fig.\ref{state-transition}
+\begin{figure}
+\begin{center}
+\includegraphics[width= 75mm]{graph.eps}
+\end{center}
+%\vspace{-0.1in}
+\caption{{\em state diagram of the resulting intersection automata}}
+\label{state-transition}
+\end{figure}
+
+
+Let us consider, if a code replacement attack take place on this system. The diagram of the
+automata after the attack is depicted in Fig.\ref{replaced}
+\begin{figure}
+\begin{center}
+\includegraphics[width= 50mm]{replaced.pdf}
+\end{center}
+%\vspace{-0.1in}
+\caption{{\em control automaton after code replacement attack}}
+\label{replaced}
+\end{figure}
+As a result of this attack one control loop got some changes. We can capture
+the change by examinig the product automaton of the control applications. There can be two 
+consequences, either we will get no cycle in the resulting product automaton or if a cycle 
+can be formed there but the run of the cycle will not contain the accepting sequence 
+from all of the loop. In the Fig.\ref{graph_replaced} we can see that there are cycles but
+that does not satisfy our expexted condition. So we can say that code replacement attack has taken place.
+\begin{figure}
+\begin{center}
+\includegraphics[width= 50mm]{graph_replaced.eps}
+\end{center}
+%\vspace{-0.1in}
+\caption{{\em control automaton after code replacement attack}}
+\label{graph_replaced}
+\end{figure}

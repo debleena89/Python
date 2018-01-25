@@ -1,0 +1,30 @@
+\documentclass[conference]{IEEEtran}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{xcolor}
+\title{ An automata theoretic framework for analyzing effects
+of Control Hijacking on Scheduling}
+\begin{document}
+% 					\textsuperscript{2} Advanced Systems Laboratory, DRDO}
+\maketitle
+\input{abstract}
+\input{introduction}
+\input{RelatedWork}
+\input{background}
+\input{Motivating_examples}
+\input{solution}
+\input{Example}
+\input{experiment}
+\input{conclusion}
+%\newpage
+%{\scriptsize
+
+\bibliographystyle{IEEEtran}
+{\small
+\nocite{*}
+\bibliography{references}
+}
+%\bibliographystyle{abbrv}
+%\bibliography{main}
+\end{document}

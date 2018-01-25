@@ -1,0 +1,7 @@
+﻿digraph Test{
+        one -> two [label = a   ];
+        two -> three [label = b];
+        three -> four [label = c];
+        four -> two [label = d];
+        two -> one [label = e];
+}

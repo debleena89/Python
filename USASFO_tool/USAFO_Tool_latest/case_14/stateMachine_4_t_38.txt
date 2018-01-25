@@ -1,0 +1,15 @@
+number_of_state:2
+
+States:tuj0,tuj1
+
+Initial State:tuj0
+
+number_of_final_states:1
+
+Final_states:tuj1
+
+number_of_alphabets:2
+
+alphabets:a,b
+
+Transitions:(tuj0,a,tuj0),(tuj0,b,tuj1),(tuj1,a,tuj0),(tuj1,b,tuj1) 

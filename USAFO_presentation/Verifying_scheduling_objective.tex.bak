@@ -1,0 +1,33 @@
+\begin{frame}
+\frametitle{Verifying the scheduling objective}
+
+\tiny{\textcolor{blue}{Once the intersection automaton is constructed, the task of looking for cycles
+starting from the initial states is carried out. Cycle detection algorithms are
+standard in literature\footnote{\tiny{\textcolor{blue}{Clarke,Jr., Edmund M. and Grumberg, Orna and Peled, Doron A.,Model Checking}}}}}.
+
+\tiny{\textcolor{blue}{\bf Checking Emptiness}}
+\begin{itemize}
+ \item \tiny{\textcolor{blue}{Starting from the initiaql state, any strongly connected component that 
+ contains a cycle over an acceptaing state is considered as accepting run}}
+ \item \tiny{\textcolor{blue}{If no connected component has a cycle over accepting run then it is 
+       empty.}}
+       
+\end{itemize}
+
+
+
+\tiny{\textcolor{blue}{We implement the same for this work as well.}}
+\begin{itemize}
+\item \tiny{\textcolor{blue}{ Once a cycle is found, we traverse one cycle (every cycle is bound to contain a
+finite number of states)}}
+\item \tiny{\textcolor{blue}{check if each control loop is represented inside it.}}
+\item \tiny{\textcolor{blue}{If not, we proceed to the next cycle.}}
+\item \tiny{\textcolor{blue}{If all cycles are exhausted and we do not encounter any one which meets our scheduling
+objective, we conclude that the schedulability requirement is not met.}}
+\end{itemize}
+
+\end{frame}
+
+
+
+

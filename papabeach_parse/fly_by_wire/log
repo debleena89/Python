@@ -1,0 +1,141 @@
+TranslationUnitDecl 0x13fc9d0 <<invalid sloc>>
+|-TypedefDecl 0x13fceb0 <<invalid sloc>> __int128_t '__int128'
+|-TypedefDecl 0x13fcf10 <<invalid sloc>> __uint128_t 'unsigned __int128'
+|-TypedefDecl 0x13fd260 <<invalid sloc>> __builtin_va_list '__va_list_tag [1]'
+|-TypedefDecl 0x13fd2c0 <./link_autopilot.h:38:1, col:17> pprz_t 'int'
+|-RecordDecl 0x13fd310 <line:44:1, line:50:1> struct inter_mcu_msg
+| |-FieldDecl 0x13fd3c0 <line:45:3, col:11> channels 'int'
+| |-FieldDecl 0x13fd420 <line:46:3, col:11> ppm_cpt 'int'
+| |-FieldDecl 0x13fd480 <line:47:3, col:11> status 'int'
+| |-FieldDecl 0x13fd4e0 <line:48:3, col:11> nb_err 'int'
+| `-FieldDecl 0x13fd540 <line:49:3, col:11> vsupply 'int'
+|-FunctionDecl 0x13fd650 <line:65:1, col:24> test_ppm_task 'void (void)'
+|-FunctionDecl 0x142df00 <line:66:1, col:36> check_mega128_values_task 'void (void)'
+|-FunctionDecl 0x142e030 <line:67:1, col:38> send_data_to_autopilot_task 'void (void)'
+|-FunctionDecl 0x142e160 <line:68:1, col:30> check_failsafe_task 'void (void)'
+|-FunctionDecl 0x142e290 <./timer.h:47:1, line:56:1> timer_init 'void (void)' static inline
+| `-CompoundStmt 0x142e390 <line:49:1, line:56:1>
+|-FunctionDecl 0x142e470 <line:64:1, line:68:1> timer_now 'int (void)' static inline
+| `-CompoundStmt 0x142e510 <line:66:1, line:68:1>
+|-FunctionDecl 0x142e5c0 <line:70:1, line:74:1> timer_now_non_atomic 'int (void)' static inline
+| `-CompoundStmt 0x142e660 <line:72:1, line:74:1>
+|-FunctionDecl 0x142e710 <line:82:1, line:90:1> timer_periodic 'int (void)' static inline
+| `-CompoundStmt 0x142e8e8 <line:84:1, line:90:1>
+|-FunctionDecl 0x142e800 <<invalid sloc>> bit_is_set 'int ()'
+|-FunctionDecl 0x142e990 <./servo.h:55:1, col:30> servo_init 'void (void)' extern
+|-FunctionDecl 0x142ec30 <line:56:1, col:44> servo_set 'void (const pprz_t *)' extern
+| `-ParmVarDecl 0x142eb30 <col:23, col:43> values 'const pprz_t *'
+|-FunctionDecl 0x142f890 <line:57:1, col:59> servo_set_one 'void (int, int)' extern
+| |-ParmVarDecl 0x142ecf0 <col:27, col:35> servo 'int'
+| `-ParmVarDecl 0x142ed60 <col:42, col:51> value_us 'int'
+|-FunctionDecl 0x142f9d0 <line:58:1, col:32> servo_transmit 'void (void)' extern
+|-FunctionDecl 0x142fb30 <./ppm.h:68:1, line:87:1> ppm_init 'void (void)' static inline
+| `-CompoundStmt 0x142fdf8 <line:70:1, line:87:1>
+|-FunctionDecl 0x142fbf0 <<invalid sloc>> cbi 'int ()'
+|-FunctionDecl 0x142fce0 <<invalid sloc>> sbi 'int ()'
+|-VarDecl 0x142fe20 <line:91:1, col:24> ppm_valid 'volatile int' extern
+|-VarDecl 0x142fe90 <line:92:1, col:15> last_radio 'pprz_t':'int' extern
+|-VarDecl 0x142ff00 <line:93:1, col:15> last_radio_contains_avg_channels 'int' extern
+|-FunctionDecl 0x142fff0 <line:101:1, col:37> last_radio_from_ppm 'void (void)' extern
+|-VarDecl 0x14300e0 <./spi.h:38:1, col:29> from_mega128 'struct inter_mcu_msg':'struct inter_mcu_msg' extern
+|-VarDecl 0x1430160 <line:39:1, col:29> to_mega128 'struct inter_mcu_msg':'struct inter_mcu_msg' extern
+|-VarDecl 0x14301d0 <line:40:1, col:24> mega128_receive_valid 'volatile int' extern
+|-VarDecl 0x1430240 <line:41:1, col:24> spi_was_interrupted 'volatile int' extern
+|-FunctionDecl 0x1430330 <line:44:1, col:19> spi_init 'void (void)'
+|-FunctionDecl 0x1430460 <line:45:1, col:20> spi_reset 'void (void)'
+|-FunctionDecl 0x1430590 <./uart.h:30:1, col:25> uart_init_tx 'void (void)'
+|-FunctionDecl 0x14306c0 <line:31:1, col:25> uart_init_rx 'void (void)'
+|-FunctionDecl 0x1437130 <line:32:1, col:40> uart_transmit 'void (unsigned char)'
+| `-ParmVarDecl 0x1430770 <col:21, col:35> data 'unsigned char'
+|-FunctionDecl 0x14372b0 <line:34:1, col:33> uart_print_hex 'void (int)'
+| `-ParmVarDecl 0x14371f0 <col:23, col:31> c 'int'
+|-FunctionDecl 0x14373f0 <line:35:1, col:36> uart_print_hex16 'void (int)'
+| `-ParmVarDecl 0x1437370 <col:25, col:34> c 'int'
+|-FunctionDecl 0x1437530 <line:36:1, col:40> uart_print_string 'void (const int *)'
+| `-ParmVarDecl 0x14374b0 <col:24, col:39> s 'const int *'
+|-FunctionDecl 0x14376e0 <line:37:1, col:39> uart_print_float 'void (const float *)'
+| `-ParmVarDecl 0x1437620 <col:24, col:38> f 'const float *'
+|-RecordDecl 0x1437790 <main.c:43:1, col:8> struct adc_buf
+|-VarDecl 0x1437880 <col:1, col:16> vsupply_adc_buf 'struct adc_buf':'struct adc_buf'
+|-VarDecl 0x1437910 <line:44:1, col:16> vservos_adc_buf 'struct adc_buf':'struct adc_buf'
+|-VarDecl 0x1437980 <line:47:1, col:9> mode 'int'
+|-VarDecl 0x14379f0 <line:48:1, col:16> time_since_last_mega128 'int' static
+|-VarDecl 0x1437a60 <line:49:1, col:17> time_since_last_ppm 'int' static
+|-VarDecl 0x1437ad0 <line:50:1, col:8> radio_ok 'int'
+|-VarDecl 0x1437b50 <line:52:1, col:60> failsafe 'const pprz_t [9]' static
+| `-InitListExpr 0x1437d50 <col:34, col:60> 'const pprz_t [9]'
+|   |-IntegerLiteral 0x1437ba8 <col:35> 'int' 0
+|   |-IntegerLiteral 0x1437bc8 <col:38> 'int' 0
+|   |-IntegerLiteral 0x1437be8 <col:41> 'int' 0
+|   |-IntegerLiteral 0x1437c08 <col:44> 'int' 0
+|   |-IntegerLiteral 0x1437c28 <col:47> 'int' 0
+|   |-IntegerLiteral 0x1437c48 <col:50> 'int' 0
+|   |-IntegerLiteral 0x1437c68 <col:53> 'int' 0
+|   |-IntegerLiteral 0x1437c88 <col:56> 'int' 0
+|   `-IntegerLiteral 0x1437ca8 <col:59> 'int' 0
+|-VarDecl 0x1437f20 <line:54:1, col:16> ppm_cpt 'int' static
+|-FunctionDecl 0x1438010 <line:81:1, line:97:1> to_autopilot_from_last_radio 'void (void)' static
+| `-CompoundStmt 0x14390d0 <line:81:49, line:97:1>
+|-FunctionDecl 0x1438c20 <<invalid sloc>> _BV 'int ()'
+|-FunctionDecl 0x1438fc0 <<invalid sloc>> VoltageOfAdc 'int ()'
+|-FunctionDecl 0x1439180 prev 0x142e030 <line:99:1, line:107:1> send_data_to_autopilot_task 'void (void)'
+| `-CompoundStmt 0x1439428 <line:100:1, line:107:1>
+|-FunctionDecl 0x1439240 <<invalid sloc>> bit_is_clear 'int ()'
+|-FunctionDecl 0x14394d0 <line:109:1, line:155:1> main 'int (void)'
+| `-CompoundStmt 0x143a8b8 <line:110:1, line:155:1>
+|   |-CallExpr 0x1439608 <line:111:3, col:16> 'void'
+|   | `-ImplicitCastExpr 0x14395f0 <col:3> 'void (*)(void)' <FunctionToPointerDecay>
+|   |   `-DeclRefExpr 0x14395c8 <col:3> 'void (void)' Function 0x1430590 'uart_init_tx' 'void (void)'
+|   |-CallExpr 0x14397d0 <line:115:3, col:12> 'int'
+|   | `-ImplicitCastExpr 0x14397b8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+|   |   `-DeclRefExpr 0x1439790 <col:3> 'int ()' Function 0x14396f0 'adc_init' 'int ()'
+|   |-CallExpr 0x14399c0 <line:116:3, col:38> 'int'
+|   | |-ImplicitCastExpr 0x14399a8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+|   | | `-DeclRefExpr 0x14398c0 <col:3> 'int ()' Function 0x1439820 'adc_buf_channel' 'int ()'
+|   | |-IntegerLiteral 0x14398e8 <col:19> 'int' 3
+|   | `-UnaryOperator 0x1439988 <col:22, col:23> 'struct adc_buf *' prefix '&'
+|   |   `-DeclRefExpr 0x1439908 <col:23> 'struct adc_buf':'struct adc_buf' lvalue Var 0x1437880 'vsupply_adc_buf' 'struct adc_buf':'struct adc_buf'
+|   |-CallExpr 0x1439aa0 <line:117:3, col:38> 'int'
+|   | |-ImplicitCastExpr 0x1439a88 <col:3> 'int (*)()' <FunctionToPointerDecay>
+|   | | `-DeclRefExpr 0x14399f8 <col:3> 'int ()' Function 0x1439820 'adc_buf_channel' 'int ()'
+|   | |-IntegerLiteral 0x1439a20 <col:19> 'int' 6
+|   | `-UnaryOperator 0x1439a68 <col:22, col:23> 'struct adc_buf *' prefix '&'
+|   |   `-DeclRefExpr 0x1439a40 <col:23> 'struct adc_buf':'struct adc_buf' lvalue Var 0x1437910 'vservos_adc_buf' 'struct adc_buf':'struct adc_buf'
+|   |-CallExpr 0x1439b18 <line:119:3, col:14> 'void'
+|   | `-ImplicitCastExpr 0x1439b00 <col:3> 'void (*)(void)' <FunctionToPointerDecay>
+|   |   `-DeclRefExpr 0x1439ad8 <col:3> 'void (void)' Function 0x142e290 'timer_init' 'void (void)'
+|   |-CallExpr 0x1439b80 <line:120:3, col:14> 'void'
+|   | `-ImplicitCastExpr 0x1439b68 <col:3> 'void (*)(void)' <FunctionToPointerDecay>
+|   |   `-DeclRefExpr 0x1439b40 <col:3> 'void (void)' Function 0x142e990 'servo_init' 'void (void)'
+|   |-CallExpr 0x143a320 <line:121:3, col:12> 'void'
+|   | `-ImplicitCastExpr 0x1439bd0 <col:3> 'void (*)(void)' <FunctionToPointerDecay>
+|   |   `-DeclRefExpr 0x1439ba8 <col:3> 'void (void)' Function 0x142fb30 'ppm_init' 'void (void)'
+|   |-CallExpr 0x143a388 <line:122:3, col:12> 'void'
+|   | `-ImplicitCastExpr 0x143a370 <col:3> 'void (*)(void)' <FunctionToPointerDecay>
+|   |   `-DeclRefExpr 0x143a348 <col:3> 'void (void)' Function 0x1430330 'spi_init' 'void (void)'
+|   |-WhileStmt 0x143a850 <line:124:3, line:153:3>
+|   | |-<<<NULL>>>
+|   | |-IntegerLiteral 0x143a3b0 <line:124:10> 'int' 1
+|   | `-CompoundStmt 0x143a818 <line:125:3, line:153:3>
+|   |   |-CallExpr 0x143a410 <line:126:5, col:19> 'void'
+|   |   | `-ImplicitCastExpr 0x143a3f8 <col:5> 'void (*)(void)' <FunctionToPointerDecay>
+|   |   |   `-DeclRefExpr 0x143a3d0 <col:5> 'void (void)' Function 0x13fd650 'test_ppm_task' 'void (void)'
+|   |   |-CallExpr 0x143a478 <line:127:5, col:31> 'void'
+|   |   | `-ImplicitCastExpr 0x143a460 <col:5> 'void (*)(void)' <FunctionToPointerDecay>
+|   |   |   `-DeclRefExpr 0x143a438 <col:5> 'void (void)' Function 0x142df00 'check_mega128_values_task' 'void (void)'
+|   |   |-CallExpr 0x143a4e0 <line:128:5, col:33> 'void'
+|   |   | `-ImplicitCastExpr 0x143a4c8 <col:5> 'void (*)(void)' <FunctionToPointerDecay>
+|   |   |   `-DeclRefExpr 0x143a4a0 <col:5> 'void (void)' Function 0x1439180 'send_data_to_autopilot_task' 'void (void)'
+|   |   `-CallExpr 0x143a548 <line:129:5, col:25> 'void'
+|   |     `-ImplicitCastExpr 0x143a530 <col:5> 'void (*)(void)' <FunctionToPointerDecay>
+|   |       `-DeclRefExpr 0x143a508 <col:5> 'void (void)' Function 0x142e160 'check_failsafe_task' 'void (void)'
+|   `-ReturnStmt 0x143a898 <line:154:3, col:10>
+|     `-IntegerLiteral 0x143a878 <col:10> 'int' 0
+|-FunctionDecl 0x14396f0 <<invalid sloc>> adc_init 'int ()'
+|-FunctionDecl 0x1439820 <<invalid sloc>> adc_buf_channel 'int ()'
+|-FunctionDecl 0x143a9b0 prev 0x13fd650 <line:156:1, line:187:1> test_ppm_task 'void (void)'
+| `-CompoundStmt 0x143ad98 <line:157:1, line:187:1>
+|-FunctionDecl 0x143ae40 prev 0x142e160 <line:188:1, line:195:1> check_failsafe_task 'void (void)'
+| `-CompoundStmt 0x143b048 <line:189:1, line:195:1>
+`-FunctionDecl 0x143b0f0 prev 0x142df00 <line:196:1, line:211:1> check_mega128_values_task 'void (void)'
+  `-CompoundStmt 0x143b2b0 <line:197:1, line:211:1>

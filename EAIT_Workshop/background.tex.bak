@@ -1,0 +1,29 @@
+\section{Background} \label{sec5}
+\noindent
+\textbf{B\"{u}chi Automata:}
+A B\"{u}chi automaton is nothing but a Finite State Machine having at least one cycle 
+containing at least one accepting state. It has the ability of accepting infinite 
+words over finite \textcolor{red}{alphabet}. B\"{u}chi automaton can be described as a five tuple, 
+$A = (Q,I,\delta,q_0,F)$ \cite{WeissA07} where $Q$ is a finite set of states, $I$ is a set
+of alphabet, $\delta$ is the transition function, $\delta : Q$ x $I \rightarrow Q $, $q_0$ 
+is an initial state and $q_0 \in Q $ and $F$ is a set of final states. An infinite words
+$\delta \in I ^ \omega$ over the input states $ q_0, q_1, q_2, ....$ describes a run of
+the automaton such that $ q_k+1 \in \delta(q_k, \delta_k)$ where $k \in \mathbb{N}$ and some 
+accepting states $q_f \in F $ will be appearing in the run repeatedly. If 
+$|\delta(q,i)| = 1$ where $ q \in Q $ and $i \in I$, then it is a deterministic 
+B\"{u}chi automaton otherwise it is non-deterministic.
+
+
+\textbf{Exponential stability:}
+The parameter that select the final state of the automaton is defined by exponential
+stability. Here we are trying to construct such an automaton where each state will be
+represented by $L,$ where $L \in \mathbb{N} $ length sequences. A system which comprises a set 
+of states(each state represents a set of sequences) is said to be $(L,\rho)$-exponentially 
+stable if $ x(t + L) / x(t) < \rho $ for every $t \in \mathbb{N}$ and $x(t) \in R^n $ \cite{AlurW08}. 
+For $n$ number of control actions with $L$ length sequences we have $n^L$ number of states, for 
+each state to be exponentially stable have to satisfy $ \parallel A_{\delta_t+L}\dots 
+A_{\delta_t+1} \parallel  < \rho$ where $0<\rho<1$ \cite{WeissA07} and each state have the sub-sequence
+$A_{\delta_t+L}\dots A_{\delta_t+1}$ . \textcolor{red}{what is $x(t)$ here: it comes from the equation of the system
+which is given in problem statement}
+
+$ExpStab(L,\rho) = \{\delta \in I^\omega : \forall t \in \mathbb{N} \parallel A_{\delta_t+L}\dots A_{\delta_t+1} \parallel  < \rho \}$

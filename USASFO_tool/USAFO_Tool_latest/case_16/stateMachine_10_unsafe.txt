@@ -1,0 +1,15 @@
+number_of_state:3
+
+States:A13,B13,C13
+
+Initial State:A13
+
+number_of_final_states:1
+
+Final_states:B13
+
+number_of_alphabets:2
+
+alphabets:a,b
+
+Transitions:(A13,a,A13),(A13,b,B13),(B13,a,C13),(B13,b,C13),(C13,a,C13),(C13,b,C13)

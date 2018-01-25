@@ -1,0 +1,15 @@
+number_of_state:2
+
+States:m0,m1
+
+Initial State:m0
+
+number_of_final_states:1
+
+Final_states:m1
+
+number_of_alphabets:2
+
+alphabets:a,b
+
+Transitions:(m0,a,m0),(m0,b,m1),(m1,a,m0),(m1,b,m1) 

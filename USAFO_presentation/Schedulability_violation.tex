@@ -1,0 +1,29 @@
+\begin{frame}
+\frametitle{Schedulability violation attacks:}
+
+
+
+\tiny{\textcolor{blue}{Definition: A set of concurrent control loops, each expressed as a B\"{u}chi automaton, 
+is schedulable if there exists a strategy to schedule the individual control
+loops on the shared bus infinitely often. The scheduling objective is defined in the
+lines of infinitary acceptance, as is the case with B\"{u}chi objectives.}}\\
+
+
+\tiny{\textcolor{blue}{Our schedulability requirement:}}
+\begin{itemize}
+
+\item \tiny{\textcolor{blue}{A scheduler should be able to allocate bus access to each individual control loop infinitely often }}
+
+\item \tiny{\textcolor{blue}{Given any infinite run of the
+composed system, at least one constituent bus accessing / accepting state from
+each control loop should repeat infinitely often}}
+
+\item \tiny{\textcolor{blue}{A system is safe if the above two
+holds, unsafe otherwise}}
+\end{itemize}
+
+\tiny{\textcolor{blue}{We conclude that a replacement attack has been carried
+out if a system, initially safe and schedulable, turns out to be non-schedulable.}}
+
+
+\end{frame}

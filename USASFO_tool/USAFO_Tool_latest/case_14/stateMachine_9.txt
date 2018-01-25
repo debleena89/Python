@@ -1,0 +1,15 @@
+number_of_state:4
+
+States:A8,B8,C8,D8
+
+Initial State:A8
+
+number_of_final_states:1
+
+Final_states:C8
+
+number_of_alphabets:2
+
+alphabets:a,b
+
+Transitions:(A8,a,A8),(A8,b,B8),(B8,a,C8),(B8,b,D8),(C8,a,D8),(C8,b,B8),(D8,a,A8),(D8,b,D8)

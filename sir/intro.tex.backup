@@ -1,0 +1,108 @@
+\section{Introduction} \label{sec:intro}
+\noindent
+Soon after the Stuxnet worm affected the Iranian nuclear enrichment control 
+system and was later dissected to show that a number of vulnerabilities 
+ranging from the Microsoft operating system to the Siemens applications, firmware, 
+and networking were exploited to slow down the control system os disable parts of 
+the systems, in February 2013, U.S President Barack Obama's executive order on 
+industrial control system security brought the urgency of protecting industrial
+control systems from cyber-attacks to the public perception. The critical industrial
+control systemss include power generation stations, control centers for utilities, 
+industrial manufacturing systems, chemical processing plants, nuclear plants, and 
+water and sewage control systems and so on.
+
+\noindent
+In order to protect the national safety and national economy, it is very important
+to protect a country's power grid, local and state wide transportation infrastructure,
+urban and ural water treatment facilities, industrial manufacturing automation systems,
+nuclear power plants etc., from cyber attackers. the commonality among all these different
+infrastructures are that they are all cyber physical systems(CPS). However, in the
+portfolio of systems we call CPS, there are other non-infrastructural systems such as
+automotive systems, flight systems etc. Research investment in cyber security of CPS is 
+extremely crucial for developing novel technology for cyber attacks detection, prevention,
+and countermeasures. While various individual areas of cyber security research get 
+attention in academia – for example, cryptography; crypto-analysis; network
+security in the form of firewall and other perimeter security techniques, and intrusion detection;
+anti-virus software, and static analysis of software to detect vulnerabilities and zero-day attacks;
+hardware Trojan detection etc., much of these research focus on guarding IT systems in business
+and corporate information infrastructure. Stuxnet incident brought into focus the need for further
+advanced research into systemic protection of CPS because the amount of damage that can be
+caused by attacking a power transmission system, a nuclear power plant, or a chemical plant is
+extremely high, and cause deaths, economic losses, and even long term damage to a nation’s
+economic growth.
+
+\noindent
+While a lot of the news media focus on cyber security concerns compromise of privacy and
+protected information such as large scale credit card information leakage, leakage of classified
+information etc., here is a selected list of incidents from [38] that concerns critical infrastructure
+damage due to cyber-attacks.
+
+\noindent
+1.Davis-Besse Ohio Nuclear Power Plant and Slammer Worm – January 2003
+
+\noindent
+2.North-East Power Blackout – August 2003
+
+\noindent
+3.CSX Train Signaling System and Sobig Virus – August 2003
+
+\noindent
+4.Automoble Plants and the Zotob Worm (Daimler-Chrysler) August 2005
+
+\noindent
+5.Hatch Nuclear Power Plant Shutdown – March 2008
+
+\noindent
+6.Stuxnet and Iran Nuclear Enrichment Plant problems – 2009
+
+\noindent
+SCADA or Supervisory Control and Data Acquisition systems are crucial part of most critical
+infrastructure through which sensor data is collected from physical processes involved, control is
+computed, and control commands are sent to actuators for affecting control on the physical
+processes. In this project, we want to focus on the cyber security of safety-critical systems that
+are used to monitor and control critical infrastructures such as power transmission grid, power
+distribution infrastructure, substations, manufacturing systems, water and sewage treatment
+plants, nuclear or other power plants, or transportation systems such as railway networks. With
+the advent of smart infrastructure which combines the usage of embedded sensors, actuators,
+wireless and wire line networks, computerized digital control, monitoring etc., the cyber security
+of such systems are gaining prominence among researchers , industries, as well as governments.
+
+\noindent
+In general our target systems for study are called cyber-physical systems or CPS. Cyber physical
+systems are at the core of most critical infrastructures. For example, a power grid has a physical
+component which consists of power generators, transmission lines with transformers, FACT
+devices, and other equipment, distribution system – whose dynamics is modeled using
+continuous partial differential equations, and simulation of such models involve step-wise
+numerical solution of such differential equations. A power grid also has digital or computerized
+equipment such as digital relays (protection devices), substation IEDs, various measurement
+devices including Phasor Measurement Units (PMUs), as well communication network that carry
+real-time measurements from the physical components to autonomous control devices, and carry
+the control action instructions back to the actuators. The network also carries measurements to
+the control center, where through HMI (Human Machine Interface) displays, the system
+operators can observe the measurements, and make control decisions which are then carried back
+over the network to the actuators. With the advent of machine learning, much of these human-in-
+the-loop control are likely to be substituted with machine learning based autonomous control.
+
+\noindent
+As described before, this network is often connected to the Enterprise network for business
+reasons – such as remote monitoring to business policy based control. This exposes such systems
+to simple means of cyber-attacks such as Phishing attack where a business person whose desktop
+is connected to the control network could open an email containing a payload, which can then
+take over the control of the business network, and in turn the control network. However, since
+much of the cyber threat models also assume insider knowledge or sabotage, even an isolated
+control network is not devoid of cyber-attack possibilities. A person with local or remote access
+to the equipment of the physical plant, or access to the various interfaces such as programmable
+logic controllers (PLCs) or other Intelligent Electronic Device (IEDs) that are connected to the
+physical system for measurements and control can exploit a vulnerability in these devices to
+induce an attack on the system. One could also gain access to the control network, and create
+various kinds of man-in-the-middle attacks by either suppressing measurements or control
+actuation signals, replaying stale measurements or actuation signals, or even injecting
+maliciously planned false data. These kinds of attacks would then mislead the controllers, and
+wrong control actions could lead to disastrous industrial accidents. One could also, hack into the
+controllers or the various other computing elements in the control center such as OPC servers by
+exploiting some vulnerabilities in their design and attack the cyber physical system. In fact, in
+case of Stuxnet worm, a vulnerability in the Siemens SCADA system was exploited.
+
+
+
+

@@ -1,0 +1,21 @@
+%\section{Conclusion} \label{sec5}
+\textbf{Related work}
+\noindent
+Weiss et al\cite{WeissA07}, depicts the idea of automata based control scheduling. They expressed
+the communication interface among the control components by using formal language. In their
+paper they have illustrated how the interfaces of discrete-time switched linear system
+can be expressed using finite B\"{u}chi automaton. \cite{AlurW08} have described CPU scheduling
+in terms of finite states over infinite words. This infinite words depicts the particular time 
+slot for which a particular resource can be alloted to CPU. Weiss et al\cite{WeissFAA09} has also 
+applied automata based scheduling on network, to formalize the effect of bus scheduling
+and stability of the network. Further, \cite{GhoshMDHD16} describes how the interfacing among 
+the control actions can be modeled by B\"{u}chi automaton to gurantee stable and reliable
+scheduling. In this paper they have demonstrated, how to construct the schedular automata 
+where each state represents one particular control schedule and generated the permissible 
+schedule in terms of $\omega$-regular language.
+
+Based on these ideas, in this paper, we have demonstrated how we can detect code replacement
+attach on the context of a discrete-time switched linear system, where there can be multiple 
+control actions interacting. Section 2 decribes the Background theory of this work, section 3 
+formally defines our problem statement, then section 4 gives the solution architecture and section 
+5 and 6 show the illustrative example and experiments respectively.

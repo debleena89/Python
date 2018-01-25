@@ -1,0 +1,4 @@
+
+digraph Test {
+        one -> two -> three;
+}    

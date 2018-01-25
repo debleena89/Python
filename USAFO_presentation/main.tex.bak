@@ -1,0 +1,68 @@
+\documentclass[10pt]{beamer}
+
+\usepackage{tcolorbox}
+\usepackage{xcolor}
+\usepackage{amssymb}
+\usetheme{Madrid}
+% \title{My Presentation}
+% \subtitle{Using Beamer}
+% \author{Joe Bloggs}
+% \institute{University of ShareLaTeX}
+% \date{\today}
+
+
+\begin{document}
+
+\begin{frame}
+\frametitle{Title}
+CORESAFE: A Formal Approach against code Replacement
+Attcks on cyber Physical Systems
+\end{frame}
+
+
+
+\input{Example}
+
+\input{Problem_addressed}
+
+\input{Problem_addressed_2}
+
+\input{Schedulability_violation}
+
+\input{Problem_model}
+
+\input{Solution_architecture}
+
+\input{Intersection_Automaton_construction}
+
+\input{Intersection_Automaton_construction_2}
+
+
+
+\input{Verifying_scheduling_objective}
+
+\input{Verifying_scheduling_objective_2}
+
+\input{attack_detection}
+
+\input{Experimental_result}
+
+\input{Result}
+
+\input{Shortcommings}
+
+\input{Future_planning}
+
+\input{FlexRay_parameters}
+
+\input {Our_planning}
+%\input{Shortcommings}
+
+%\input{Future_Plan}
+
+%\input{Future_plan_2}
+
+\end{document}
+
+
+
